@@ -1,15 +1,74 @@
-<h1>Hello#index</h1>
-<p>Find me in app/views/hello/index.html.erb</p>
-<!-- Example single danger button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Action
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Separated link</a></li>
-  </ul>
-</div>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>I am som</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="nav-left">
+          <ul class="nav"><a href="#">アイムソムとは？</a></ul>
+          <ul class="nav"><a href="#">ワ活</a></ul>
+          <ul class="nav"><a href="#">ワインニュース</a></ul>
+        </div>
+        <div class="nav-right">
+          <ul class="notification"><a href="#">通知アイコン</a></ul>
+          <ul class="icon"><%= link_to image_tag("icon.jpg", class:"icon"), "#" %></ul>
+          
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="main-first">
+        <%= image_tag "wine.jpg", class:"wine" %>  
+        <div class="description">お気に入りのワインが見つかる日本最大のワイン検索サイト</div>
+        <div class="logo"><%= image_tag "logo.png", class:"logo" %> </div>
+        <div class="hoge">キーワード・産地・特徴から検索できるようにする</div>
+        <div class="search-container">
+          <input type="text" style="width: 220px; height: 80px;" placeholder="キーワード・産地・特徴">
+          <button type="submit">検索</button>
+        </div>
+      </div>
+
+      <div class="main-second">
+        <div class="reviwes">
+          <div class="review">     
+            <div class="review-top"><%= link_to(image_tag("gokuu.png", alt: "悟空", class: "gokuu"), "#") %><%= link_to "悟空", "#" %>2024/04/03
+              <div class="wine-name"><a href="#" class="wine-name">ワインマン(フランス)</a></div>
+            </div>
+            <div class="review-content">
+              <div class="review-image"><%= link_to image_tag("wineman.jpg", class:"wineman"), "#" %></div>
+              <div class="review-text">チチの誕生日にワインマンを購入し自宅で嗜んだ</div>
+            </div>
+            <div class="attachment">いいねマークとコメントマーク</div>
+          </div>            
+          <div class="review">
+            <div class="review-top"><%= link_to(image_tag("bezita.jpg", alt: "ベジータ", class: "bezita"), "#") %><%= link_to "ベジータ", "#" %>2024/04/03
+              <div class="wine-name"><a href="#" class="wine-name">ワインマン（スペイン）</a></div></div>
+              <div class="review-content">
+                <div class="review-image"><%= link_to image_tag("wineman.jpg", class:"wineman"), "#" %></div>
+                <div class="review-text">チチの誕生日にワインマンを購入し自宅で嗜んだ</div>
+              </div>
+              <div class="attachment">いいねマークとコメントマーク</div>
+          </div>
+          <div class="review">
+            <div class="review-top"><%= link_to(image_tag("piccoro.png", alt: "ピッコロ", class: "piccoro"), "#") %><%= link_to "ピッコロ", "#" %>2024/04/03
+            <div class="wine-name"><a href="#" class="wine-name">ワインマン（ドイツ）</a></div></div>
+            <div class="review-content">
+              <div class="review-image"><%= link_to image_tag("wineman.jpg", class:"wineman"), "#" %></div>
+              <div class="review-text">チチの誕生日にワインマンを購入し自宅で嗜んだ</div>
+            </div>
+            <div class="attachment">いいねマークとコメントマーク</div>
+          </div>
+        </div>
+      </div>
+    </main> 
+
+    <footer>Copyright©️2024 IamSommelier</footer>
+
+  </body>
+</html>
