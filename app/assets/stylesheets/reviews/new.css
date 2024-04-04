@@ -26,17 +26,23 @@
   
 }
 
+
+
 .review-format-upper{
   height: 15%;
   width: 90%;
   border-bottom:black;
   border-bottom: 2px solid #CCC;
+  font-weight: bold;
 }
 
 .date-field{
+  border-radius: 5px;
+  border-color: #ccc;
 }
 .name-field{
-
+  border-radius: 5px;
+  border-color: #ccc;
 }
 
 
@@ -45,6 +51,7 @@
   width: 90%;
   border-bottom:black;
   border-bottom: 2px solid #CCC;
+  font-weight: bold;
 }
 
 .review-format-middle-first{
@@ -53,9 +60,18 @@
   justify-content: space-around;
 }
 
-.wine-bar-field{}
-.type-field{}
-.grape-variety-field{}
+.wine-bar-field{
+  border-radius: 5px;
+  border-color: #ccc;
+}
+.type-field{
+  border-radius: 5px;
+  border-color: #ccc;
+}
+.grape-variety-field{
+  border-radius: 5px;
+  border-color: #ccc;
+}
 
 
 
@@ -66,30 +82,46 @@
 }
 .continent-field{
   width: 150px;
+  border-radius: 5px;
+  border-color: #ccc;
 }
 .country-field{
   width: 150px;
+  border-radius: 5px;
+  border-color: #ccc;
 }
 .region-field{
   width: 150px;
+  border-radius: 5px;
+  border-color: #ccc;
 }
 .producer-variety{
   width: 150px;
+  border-radius: 5px;
+  border-color: #ccc;
 }
 
 
 .review-format-middle-third{
   height: 10%;
+  border-radius: 5px;
+  border-color: #ccc;
 }
 .review-format-middle-forth{
   height: 10%;
+  border-radius: 5px;
+  border-color: #ccc;
 }
 .review-format-middle-fifth{
   height: 50%;
+  border-radius: 5px;
+  border-color: #ccc;
 }
 .content-variety{
   width: 90%;
   height: 90%;
+  border-radius: 5px;
+  border-color: #ccc;
 }
 
 
