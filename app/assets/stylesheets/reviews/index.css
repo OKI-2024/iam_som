@@ -6,7 +6,7 @@ a {
   color: white;
 }
 
-/* フッター（始） */
+/* ヘッダー（始） */
 
 .navbar {
   width: 100vw;
@@ -22,10 +22,13 @@ a {
   display: flex;
 }
 .nav {
-  
+  margin: 0 20px;
 }
 .nav-right {
+  width: 800px;
   display: flex;
+  justify-content: space-between;
+
 }
 .notification {
   
@@ -39,7 +42,7 @@ a {
   border-radius: 50%; 
 }
 
-/* フッター（終） */
+/* ヘッダー（終） */
 
 
 /* ロゴ＆検索画面（始） */
@@ -59,7 +62,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
+  }
 .description {
   
 }
@@ -111,6 +114,9 @@ main {
 .hoge {
   font-size: 15px;
 }
+
+
+
 
 /* ロゴ＆検索画面（終） */
 

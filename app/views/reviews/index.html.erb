@@ -1,26 +1,6 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>I am som</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <header>
-      <div class="navbar">
-        <div class="nav-left">
-          <ul class="nav"><a href="#">アイムソムとは？</a></ul>
-          <ul class="nav"><a href="#">ワ活</a></ul>
-          <ul class="nav"><a href="#">ワインニュース</a></ul>
-        </div>
-        <div class="nav-right">
-          <ul class="notification"><a href="#">通知アイコン</a></ul>
-          <ul class="icon"><%= link_to image_tag("icon.jpg", class:"icon"), "#" %></ul>
-          
-        </div>
-      </div>
-    </header>
+
+    
+<%= render "shared/header" %>
 
     <main>
       <div class="main-first">
@@ -32,6 +12,10 @@
           <input type="text" style="width: 220px; height: 80px;" placeholder="キーワード・産地・特徴">
           <button type="submit">検索</button>
         </div>
+        <%= link_to(class: 'post-review-btn') do %>
+        <div class="post-review-text">投稿する</div>
+        <%= image_tag 'wine-glass.png', size: '185x50' ,class: "post-review-btn-icon" %>
+        <% end %>
       </div>
 
       <div class="main-second">
@@ -68,7 +52,6 @@
       </div>
     </main> 
 
-    <footer>Copyright©️2024 IamSommelier</footer>
+<%= render "shared/footer" %>
 
-  </body>
-</html>
+ 
