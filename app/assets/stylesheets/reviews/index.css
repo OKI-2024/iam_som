@@ -25,9 +25,11 @@ a {
   margin: 0 20px;
 }
 .nav-right {
-  width: 700px;
+  width: 500px;
   display: flex;
   justify-content: space-between;
+  padding-right: 50px;
+  
 
 }
 .notification {
