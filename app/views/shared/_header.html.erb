@@ -6,12 +6,18 @@
           <ul class="nav"><a href="#">ワインニュース</a></ul>
         </div>
         <div class="nav-right">
-          <ul class="sign-in"><a href="#">新規登録</a></ul>
-          <ul class="log-in"><a href="#">ログイン</a></ul>
-          <ul class="log-out"><a href="#">ログアウト</a></ul>
+          <% if user_signed_in? %>
+          <ul><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "log-out" %></ul>
           <ul class="notification"><a href="#">通知アイコン</a></ul>
-          <ul class="icon"><%= link_to image_tag(current_user.avatar, class:"icon"), "#" %></ul>
+          <% else %>
+          <ul><%= link_to '新規登録', new_user_registration_path, class: "sign-in" %></ul>
+          <ul><%= link_to 'ログイン', new_user_session_path, class: "log-in" %></ul>
+          <%  end %>
           
+          
+          <% if current_user %>
+          <ul class="icon"><%= link_to image_tag(current_user.avatar, class:"icon"), edit_user_path(current_user) %></ul>
+          <% end %>
         </div>
       </div>
     </header>
