@@ -10,7 +10,7 @@
           <ul class="log-in"><a href="#">ログイン</a></ul>
           <ul class="log-out"><a href="#">ログアウト</a></ul>
           <ul class="notification"><a href="#">通知アイコン</a></ul>
-          <ul class="icon"><%= link_to image_tag("icon.jpg", class:"icon"), "#" %></ul>
+          <ul class="icon"><%= link_to image_tag(current_user.avatar, class:"icon"), "#" %></ul>
           
         </div>
       </div>
