@@ -1,0 +1,112 @@
+.review-new-main{
+  width: 100vw;
+  height: 100vh;
+  background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-invitation{
+  font-size: 30px;
+  font-weight: bold;
+  color: #663333;
+  margin-bottom: 20px;
+}
+
+.review-format{
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.review-format-upper{
+  height: 15%;
+  width: 90%;
+  border-bottom:black;
+  border-bottom: 2px solid #CCC;
+}
+
+.date-field{
+}
+.name-field{
+
+}
+
+
+.review-format-middle{
+  height: 70%;
+  width: 90%;
+  border-bottom:black;
+  border-bottom: 2px solid #CCC;
+}
+
+.review-format-middle-first{
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.wine-bar-field{}
+.type-field{}
+.grape-variety-field{}
+
+
+
+.review-format-middle-second{
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+.continent-field{
+  width: 150px;
+}
+.country-field{
+  width: 150px;
+}
+.region-field{
+  width: 150px;
+}
+.producer-variety{
+  width: 150px;
+}
+
+
+.review-format-middle-third{
+  height: 10%;
+}
+.review-format-middle-forth{
+  height: 10%;
+}
+.review-format-middle-fifth{
+  height: 50%;
+}
+.content-variety{
+  width: 90%;
+  height: 90%;
+}
+
+
+.review-format-bottom{
+  height: 15%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.review-btn{
+  background-color: #666633;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  border: none;
+  width: 60%;
+  border-radius: 40px;
+  margin: 5px 0;
+}

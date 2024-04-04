@@ -10,7 +10,7 @@ a {
 
 .navbar {
   width: 100vw;
-  height: 10px;
+  height: 70px;
   background-color: #663333;
   display: flex;
   justify-content: space-between;
@@ -60,7 +60,6 @@ main {
   font-size: 25px;
   font-weight: bold;
   color: white;
-  padding-top: 150px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -143,7 +142,7 @@ main {
 
 /* ロゴ＆検索画面（終） */
 
-/* 投稿一覧一覧（始） */
+/* 投稿一覧（始） */
 .main-second {
   width: 100vw;
   height: 1060px; /* 変更 */

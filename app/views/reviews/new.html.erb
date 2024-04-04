@@ -1,3 +1,58 @@
 <%= render "shared/header" %>
 
+<div class="review-new-main">
+  <div class="review-invitation">ワインのレビューを投稿しよう♪</div>
+  <div class="review-format">
+  <div class="review-format-upper">
+     <%= form_with(model: @review, local: true) do |form| %>
+        
+          <%= form.label :date, "日付(後々JS使う)" %>
+          <%= form.text_field :date, class: "date-field" %>
+        
+          <%= form.label :name, "ワイン名" %>
+          <%= form.text_field :name, class: "name-field" %>
+        
+  </div>
+
+  <div class="review-format-middle">
+    <div class="review-format-middle-first">
+      
+          <%= form.label :wine_bar, "お店" %>
+          <%= form.text_field :wine_bar, class: "wine-bar-field" %>
+        
+          <%= form.label :type, "色" %>
+          <%= form.text_field :type, class: "type-field" %>
+        
+          <%= form.label :grape_variety, "品種" %>
+          <%= form.text_field :grape_variety, class: "grape-variety-field" %>
+        
+    </div>
+    <div class="review-format-middle-second">
+          <%= form.label :continent, "大陸" %>
+          <%= form.text_field :continent, class: "continent-field" %>
+        
+          <%= form.label :country, "国" %>
+          <%= form.text_field :country, class: "country-field" %>
+        
+          <%= form.label :region, "地域" %>
+          <%= form.text_field :region, class: "region-field" %>
+
+          <%= form.label :producer, "生産者" %>
+          <%= form.text_field :producer, class: "producer-variety" %>
+
+    </div>
+    <div class="review-format-middle-third">酸味・甘味・タンニン・渋みをチェックしていく</div>
+    <div class="review-format-middle-forth">香りや味の表現方法を羅列し、タグ付けのようにする</div>
+    <div class="review-format-middle-fifth">
+      <%= form.label :content, "感想" %>
+      <%= form.text_area :content, class: "content-variety" %>
+    </div>
+  </div>
+  <div class="review-format-bottom">
+    <%= form.submit "投稿する", class: "review-btn" %>
+  </div>
+  <% end %>
+  </div>
+</div>
+
 <%= render "shared/footer" %>
