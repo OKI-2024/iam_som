@@ -21,10 +21,10 @@
           <%= form.text_field :wine_bar, class: "wine-bar-field" %>
         
           <%= form.label :type, "色" %>
-          <%= form.text_field :type, class: "type-field" %>
+          <%= form.collection_select(:type_id, Type.all, :id, :name, {}, {class:"type-field"}) %>
         
           <%= form.label :grape_variety, "品種" %>
-          <%= form.text_field :grape_variety, class: "grape-variety-field" %>
+          <%= form.collection_select(:grape_variety_id, GrapeVariety.all, :id, :name, {}, {class:"grape-variety-field"}) %>
         
     </div>
     <div class="review-format-middle-second">
