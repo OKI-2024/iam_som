@@ -28,15 +28,11 @@
         
     </div>
     <div class="review-format-middle-second">
-          <%= form.label :continent, "大陸" %>
-          <%= form.text_field :continent, class: "continent-field" %>
-        
-          <%= form.label :country, "国" %>
-          <%= form.text_field :country, class: "country-field" %>
-        
-          <%= form.label :region, "地域" %>
-          <%= form.text_field :region, class: "region-field" %>
-
+          
+          <%= form.label :wine_region, "産地" %>
+          <% options = @grouped_wine_regions.map { |continent, countries| [continent, countries.unshift(['---', nil])] } %>
+          <%= form.select :wine_region, grouped_options_for_select(options), {}, class: 'region-field' %>  
+          
           <%= form.label :producer, "生産者" %>
           <%= form.text_field :producer, class: "producer-variety" %>
 

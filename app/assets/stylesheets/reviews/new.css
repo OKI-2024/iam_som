@@ -57,7 +57,7 @@
 .review-format-middle-first{
   height: 10%;
   display: flex;
-  justify-content: space-around;
+  
 }
 
 .wine-bar-field{
@@ -78,7 +78,7 @@
 .review-format-middle-second{
   height: 10%;
   display: flex;
-  justify-content: space-around;
+ 
 }
 .continent-field{
   width: 150px;
