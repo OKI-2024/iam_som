@@ -1,7 +1,44 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# 大陸の作成
+europe = WineRegion.create(name: "ヨーロッパ")
+france = europe.children.create(name: "フランス")
+italy = europe.children.create(name: "イタリア")
+spain = europe.children.create(name: "スペイン")
+germany = europe.children.create(name: "ドイツ")
+portugal = europe.children.create(name: "ポルトガル")
+romania = europe.children.create(name: "ルーマニア")
+greece = europe.children.create(name: "ギリシャ")
+russia = europe.children.create(name: "ロシア")
+new_zealand = europe.children.create(name: "ニュージーランド")
+switzerland = europe.children.create(name: "スイス")
+ukraine = europe.children.create(name: "ウクライナ")
+hungary = europe.children.create(name: "ハンガリー")
+austria = europe.children.create(name: "オーストリア")
+czech_republic = europe.children.create(name: "チェコ")
+bulgaria = europe.children.create(name: "ブルガリア")
+serbia = europe.children.create(name: "セルビア")
+georgia = europe.children.create(name: "グルジア")
+moldova = europe.children.create(name: "モルドバ")
+
+north_america = WineRegion.create(name: "北アメリカ")
+usa = north_america.children.create(name: "アメリカ合衆国")
+canada = north_america.children.create(name: "カナダ")
+
+asia = WineRegion.create(name: "アジア")
+china = asia.children.create(name: "中国")
+japan = asia.children.create(name: "日本")
+india = asia.children.create(name: "インド")
+
+south_america = WineRegion.create(name: "南アメリカ")
+brazil = south_america.children.create(name: "ブラジル")
+argentina = south_america.children.create(name: "アルゼンチン")
+chile = south_america.children.create(name: "チリ")
+peru = south_america.children.create(name: "ペルー")
+uruguay = south_america.children.create(name: "ウルグアイ")
+
+oceania = WineRegion.create(name: "オセアニア")
+australia = oceania.children.create(name: "オーストラリア")
+new_zealand = oceania.children.create(name: "ニュージーランド")
+
+africa = WineRegion.create(name: "アフリカ")
+south_africa = africa.children.create(name: "南アフリカ")
+algeria = africa.children.create(name: "アルジェリア")
