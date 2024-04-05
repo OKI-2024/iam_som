@@ -1,0 +1,2 @@
+class WineRegion < ApplicationRecord
+end
