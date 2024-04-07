@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="review-new-main">
-  <div class="review-invitation">ワインのレビューを投稿しよう♪</div>
+  <div class="review-invitation">ワインのレビューを投稿しよう</div>
   <div class="review-format">
   <div class="review-format-upper">
      <%= form_with(model: @review, local: true) do |form| %>
@@ -37,7 +37,27 @@
           <%= form.text_field :producer, class: "producer-variety" %>
 
     </div>
-    <div class="review-format-middle-third">酸味・甘味・タンニン・渋みをチェックしていく</div>
+    <div class="review-format-middle-third">
+      <% Review.wine_attributes.each do |attribute| %>
+    
+      <% case attribute %>
+        <% when :sweetness %>
+          <%= form.label attribute, "甘み" %>
+        <% when :bitterness %>
+          <%= form.label attribute, "渋み" %>
+        <% when :acidity %>
+          <%= form.label attribute, "酸味" %>
+        <% when :alcohol %>
+          <%= form.label attribute, "アルコール" %>
+      <% end %>
+      
+      <% WineAttribute.all.each do |option| %>
+        <%= form.radio_button attribute, option.id %>
+        <%= option.name %>
+      <% end %>
+    
+     <% end %>
+    </div>
     <div class="review-format-middle-forth">香りや味の表現方法を羅列し、タグ付けのようにする</div>
     <div class="review-format-middle-fifth">
       <%= form.label :content, "感想" %>
