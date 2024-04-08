@@ -4,10 +4,10 @@
   <div class="review-invitation">ワインのレビューを投稿しよう</div>
   <div class="review-format">
   <div class="review-format-upper">
-     <%= form_with(model: @review, local: true) do |form| %>
+     <%= form_with model: @review, local: true do |form| %>
         
-          <%= form.label :date, "日付" %>
-          <%= form.text_field :date, class: "date-field" %>
+          <%= form.label :wine_date, "日付" %>
+          <%= form.text_field :wine_date, class: "date-field" %>
         
           <%= form.label :name, "ワイン名" %>
           <%= form.text_field :name, class: "name-field" %>
@@ -31,9 +31,9 @@
     </div>
     <div class="review-format-middle-second">
           
-          <%= form.label :wine_region, "産地" %>
+          <%= form.label :region, "産地" %>
           <% options = @grouped_wine_regions.map { |continent, countries| [continent, countries.unshift(['---', nil])] } %>
-          <%= form.select :wine_region, grouped_options_for_select(options), {}, class: 'region-field' %>  
+          <%= form.select :region_id, grouped_options_for_select(options), {}, class: 'region-field' %>  
           
           <%= form.label :producer, "生産者" %>
           <%= form.text_field :producer, class: "producer-variety" %>
@@ -70,7 +70,7 @@
     </div>
     <div class="review-format-middle-fifth">
       <%= form.label :content, "感想" %>
-      <%= form.text_area :content, class: "content-variety" %>
+      <%= form.text_area :content, class: "content-variety", placeholder:"感想（風味や香り、お店、料理など）例）三軒茶屋のララムリでソラマメのフリットと一緒にたべたよ＾＾" ,rows:"7" ,maxlength:"1000"  %>
     </div>
   </div>
   <div class="review-format-bottom">
