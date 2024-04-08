@@ -8,6 +8,14 @@ def new
   @grouped_wine_regions = grouped_wine_regions
 end
 
+def create
+
+
+
+
+end
+
+
 
 private
 
@@ -20,5 +28,22 @@ def grouped_wine_regions
 
   wine_regions_hash
 end
+
+def review_params
+  params.require(:review).permit(:name,
+                               :wine_date,
+                               :image,
+                               :wine_bar,
+                               :type_id,
+                               :grape_variety_id,
+                               :region_id,
+                               :producer,
+                               :sweetness,
+                               :bitterness,
+                               :alcohol,
+                               :fragrances,
+                               :content).merge(user_id: current_user.id)
+end
+
 
 end
