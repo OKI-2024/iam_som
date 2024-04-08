@@ -40,8 +40,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_05_074435) do
   end
 
   create_table "reviews", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "wine_id", null: false
+    t.date "wine_date"
+    t.text "content"
+    t.string "wine_bar"
+    t.integer "sweetness"
+    t.integer "bitterness"
+    t.integer "acidity"
+    t.integer "alcohol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["wine_id"], name: "index_reviews_on_wine_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -65,6 +75,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_05_074435) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "wines", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "producer"
+    t.integer "type_id"
+    t.integer "grape_variety_id"
+    t.integer "region_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reviews", "wines"
 end

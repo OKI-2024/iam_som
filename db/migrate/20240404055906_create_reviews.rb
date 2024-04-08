@@ -1,14 +1,15 @@
 class CreateReviews < ActiveRecord::Migration[7.0]
   def change
     create_table :reviews do |t|
-      t.integer    :grape_variety_id
-      t.integer    :type_id
-      t.integer    :region_id
-      t.text       :content
-      t.integer    :sweetness
-      t.integer    :bitterness
-      t.integer    :acidity
-      t.integer    :alcohol
+      t.bigint :user_id
+      t.references :wine, null: false, foreign_key: true
+      t.date :wine_date
+      t.text :content
+      t.string :wine_bar
+      t.integer :sweetness
+      t.integer :bitterness
+      t.integer :acidity
+      t.integer :alcohol
 
       t.timestamps
     end
