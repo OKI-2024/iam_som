@@ -10,6 +10,6 @@ class Type < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :reviews
+  has_many :wines
 
   end

@@ -61,18 +61,20 @@
 }
 
 .wine-bar-field{
+  width: 250px;
   border-radius: 5px;
   border-color: #ccc;
 }
 .type-field{
+  width: 250px;
   border-radius: 5px;
   border-color: #ccc;
 }
 .grape-variety-field{
+  width: 250px;
   border-radius: 5px;
   border-color: #ccc;
 }
-
 
 
 .review-format-middle-second{
@@ -80,26 +82,19 @@
   display: flex;
  
 }
-.continent-field{
-  width: 150px;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.country-field{
-  width: 150px;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.region-field{
-  width: 150px;
-  border-radius: 5px;
-  border-color: #ccc;
-}
+
 .producer-variety{
-  width: 150px;
+  width: 250px;
   border-radius: 5px;
   border-color: #ccc;
 }
+
+.region-field{
+  width: 250px;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+
 
 
 .review-format-middle-third{

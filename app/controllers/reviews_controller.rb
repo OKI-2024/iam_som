@@ -4,46 +4,26 @@ def index
 end
 
 def new
-  @review = Review.new
-  @grouped_wine_regions = grouped_wine_regions
+  @wine_review_form = WineReviewForm.new
 end
 
 def create
-
-
-
-
+  @wine_review_form = WineReviewForm.new(review_params)
+  if @wine_review_form.save
+    redirect_to root_path, notice: 'Review was successfully created.'
+  else
+    render :new
+  end
 end
-
 
 
 private
 
-def grouped_wine_regions
-  wine_regions_hash = {}
-
-  WineRegion.roots.each do |parent_region|
-    wine_regions_hash[parent_region.name] = parent_region.descendants.pluck(:name)
-  end
-
-  wine_regions_hash
-end
-
 def review_params
-  params.require(:review).permit(:name,
-                               :wine_date,
-                               :image,
-                               :wine_bar,
-                               :type_id,
-                               :grape_variety_id,
-                               :region_id,
-                               :producer,
-                               :sweetness,
-                               :bitterness,
-                               :alcohol,
-                               :fragrances,
-                               :content).merge(user_id: current_user.id)
-end
+    params.require(:wine_review_form).permit(:wine_date, :name, :image, :content, :wine_bar, :type_id, :grape_variety_id, :region_id,
+     :producer, :sweetness, :bitterness, :acidity, :alcohol, fragrances: []).merge(user_id: current_user.id)
+  
 
+end
 
 end

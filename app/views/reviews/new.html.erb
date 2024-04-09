@@ -4,7 +4,7 @@
   <div class="review-invitation">ワインのレビューを投稿しよう</div>
   <div class="review-format">
   <div class="review-format-upper">
-     <%= form_with model: @review, local: true do |form| %>
+     <%= form_with model: @wine_review_form, url: reviews_path, local: true do |form| %>
         
           <%= form.label :wine_date, "日付" %>
           <%= form.text_field :wine_date, class: "date-field" %>
@@ -32,8 +32,7 @@
     <div class="review-format-middle-second">
           
           <%= form.label :region, "産地" %>
-          <% options = @grouped_wine_regions.map { |continent, countries| [continent, countries.unshift(['---', nil])] } %>
-          <%= form.select :region_id, grouped_options_for_select(options), {}, class: 'region-field' %>  
+          <%= form.collection_select(:region_id, Region.all, :id, :name, {}, {class:"region-field"}) %>
           
           <%= form.label :producer, "生産者" %>
           <%= form.text_field :producer, class: "producer-variety" %>
