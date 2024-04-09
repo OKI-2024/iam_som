@@ -8,6 +8,10 @@ class WineReviewForm
 
   validates :name, presence: true
   validates :wine_date, presence: true
+  validates :grape_variety_id, numericality: { other_than: 1 }
+  validates :type_id, numericality: { other_than: 1 }
+  validates :region_id, numericality: { other_than: 1 }
+
 
   def save
     return false unless valid?
