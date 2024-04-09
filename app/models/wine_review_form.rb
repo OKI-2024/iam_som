@@ -4,13 +4,14 @@ class WineReviewForm
 
   attr_accessor :name, :producer, :type_id, :grape_variety_id, :region_id,
                 :wine_date, :content, :wine_bar, :sweetness, :bitterness,
-                :acidity, :alcohol, :fragrances, :image, :user_id
+                :acidity, :alcohol, :fragrance_id, :image, :user_id
 
   validates :name, presence: true
   validates :wine_date, presence: true
   validates :grape_variety_id, numericality: { other_than: 1 }
   validates :type_id, numericality: { other_than: 1 }
   validates :region_id, numericality: { other_than: 1 }
+
 
 
   def save
@@ -23,6 +24,9 @@ class WineReviewForm
       grape_variety_id: grape_variety_id,
       region_id: region_id
     )
+    fragrance_ids = fragrance_id.present? ? fragrance_id.reject(&:blank?) : []
+    
+    
 
     Review.create!(
       wine: wine,
@@ -33,9 +37,10 @@ class WineReviewForm
       bitterness: bitterness,
       acidity: acidity,
       alcohol: alcohol,
-      fragrances: fragrances,
+      fragrance_id: fragrance_ids,
       image: image,
       user_id: user_id
     )
+    
   end
 end

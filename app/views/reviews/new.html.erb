@@ -60,16 +60,12 @@
      <% end %>
     </div>
     <div class="review-format-middle-forth">
-
       <% Fragrance.all.each do |fragrance| %>
       <div class="fragrance-checkboxes">
-        <%= form.check_box :fragrances, { multiple: true }, fragrance.id, nil %>
-        <%= fragrance.name %>
+        <%= check_box_tag "wine_review_form[fragrance_id][]", fragrance.id, @wine_review_form.fragrance_id.include?(fragrance.id), id: "fragrance_#{fragrance.id}" %>
+        <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
       </div>
-    <% end %>
-
-
-      
+      <% end %>   
     </div>
     <div class="review-format-middle-fifth">
       <%= form.label :content, "感想" %>

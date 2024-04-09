@@ -3,8 +3,10 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :wine
 
+  attribute :fragrance_id, :integer  # ActiveHash を整数として扱う
+
   validates_presence_of :sweetness, :bitterness, :acidity, :alcohol
-  validates :fragrance_id, numericality: { other_than: 1 }
+  serialize :fragrances, Array
 
 
   def self.wine_attributes

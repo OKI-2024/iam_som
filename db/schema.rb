@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_04_055906) do
     t.integer "bitterness"
     t.integer "acidity"
     t.integer "alcohol"
-    t.json "fragrances"
+    t.integer "fragrance_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["wine_id"], name: "index_reviews_on_wine_id"
