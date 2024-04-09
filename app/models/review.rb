@@ -4,7 +4,8 @@ class Review < ApplicationRecord
   belongs_to :wine
 
   validates_presence_of :sweetness, :bitterness, :acidity, :alcohol
-  serialize :fragrances, Array
+  validates :fragrance_id, numericality: { other_than: 1 }
+
 
   def self.wine_attributes
     %i[sweetness bitterness acidity alcohol]
