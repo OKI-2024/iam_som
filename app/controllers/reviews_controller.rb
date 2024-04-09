@@ -10,7 +10,7 @@ end
 def create
   @wine_review_form = WineReviewForm.new(review_params)
   if @wine_review_form.save
-    redirect_to root_path, notice: 'Review was successfully created.'
+    redirect_to root_path
   else
     render :new
   end
