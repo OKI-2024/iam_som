@@ -10,7 +10,9 @@ class CreateReviews < ActiveRecord::Migration[7.0]
       t.integer :bitterness
       t.integer :acidity
       t.integer :alcohol
-
+      t.json :fragrances
+      
+  
       t.timestamps
     end
   end
