@@ -3,6 +3,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: white;
 }
 
 /* ヘッダー（始） */
@@ -207,14 +208,25 @@ main {
   margin-right: 20px;
   margin-left: 20px;
 }
+a.user-name-color{
+  color: blue;
+}
+
 .wine-date{
   flex-grow: 0;
   flex-shrink: 0;
   margin-right: 20px;
+  color: #757575;
 }
+
 .wine-name{
   flex-grow: 0;
   flex-shrink: 0;
+  
+}
+
+a.wine-name-color{
+  color:  blue;
 }
 
 
@@ -226,7 +238,9 @@ main {
 
 .review-text{
   margin-left: 30px;
-
+  width: 80%;
+  border: 1px solid #F3F3F3;
+  border-radius: 10px;
 }
 
 .attachment{}
@@ -241,6 +255,7 @@ main {
 .review-image{
   width: 190px;
   height: 190px;
+  margin-left: 10px;
 }
 
 .good-comment{

@@ -27,10 +27,10 @@
         
         <div class="review-top">
           <%= link_to(image_tag(review.user.avatar, alt: review.user.nickname, class: "avatar"), user_path(review.user)) %>
-          <div class="user-name"><%= link_to review.user.nickname, user_path(review.user) %></div>
+          <div class="user-name"><%= link_to review.user.nickname, user_path(review.user), class: "user-name-color" %></div>
           <div class="wine-date"><%= review.wine_date %></div>
           <div class="wine-name">
-            <%= link_to "#{review.wine.name} (#{Region.find(review.wine.region_id).name})", "#" %>
+            <%= link_to "#{review.wine.name} （ #{Region.find(review.wine.region_id).name} ）", "#", class: "wine-name-color" %>
           </div>
         </div>
 
