@@ -1,0 +1,146 @@
+.review-new-main{
+  width: 100vw;
+  height: 100vh;
+  background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-invitation{
+  font-size: 30px;
+  font-weight: bold;
+  color: #663333;
+  margin-bottom: 20px;
+}
+
+.review-format{
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #444444;
+}
+
+
+
+.review-format-upper{
+  height: 15%;
+  width: 90%;
+  border-bottom:black;
+  border-bottom: 2px solid #CCC;
+  font-weight: bold;
+}
+
+.date-field{
+  border-radius: 5px;
+  border-color: #ccc;
+}
+.name-field{
+  border-radius: 5px;
+  border-color: #ccc;
+}
+
+
+.review-format-middle{
+  height: 70%;
+  width: 90%;
+  border-bottom:black;
+  border-bottom: 2px solid #CCC;
+  font-weight: bold;
+}
+
+.review-format-middle-first{
+  height: 13%;
+  display: flex;
+  
+}
+
+.wine-bar-field{
+  width: 250px;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+.type-field{
+  width: 250px;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+.grape-variety-field{
+  width: 250px;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+
+
+.review-format-middle-second{
+  height: 13%;
+  display: flex;
+ 
+}
+
+.producer-variety{
+  width: 250px;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+
+.region-field{
+  width: 250px;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+
+
+
+.review-format-middle-third{
+  height: 14%;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+.review-format-middle-forth{
+  height: 30%;
+  border-radius: 5px;
+  border-color: #ccc;
+  display: flex;
+  flex-wrap: wrap;
+}
+.fragrance-checkboxes{
+  margin-right: 20px
+}
+
+
+.review-format-middle-fifth{
+  height: 40%;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+.content-variety{
+  width: 90%;
+  height: 60%;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+
+
+.review-format-bottom{
+  height: 15%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.review-btn{
+  background-color: #666633;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  border: none;
+  width: 60%;
+  border-radius: 40px;
+  margin: 5px 0;
+}
