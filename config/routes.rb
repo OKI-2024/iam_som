@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :reviews, only: [:index, :new, :create]
   resources :users, only: [:edit, :update]
 
+
 end
