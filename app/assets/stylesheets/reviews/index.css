@@ -3,7 +3,6 @@ body {
 }
 a {
   text-decoration: none;
-  color: white;
 }
 
 /* ヘッダー（始） */
@@ -174,6 +173,9 @@ main {
   width: 100vw;
   height: 1060px; /* 変更 */
   background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .reviwes{
   display: flex;
@@ -196,9 +198,26 @@ main {
   display: flex;
   font-size: 20px;
   font-weight: bold;
-  
-
+  align-items: center;
 }
+
+.user-name{
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.wine-date{
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+.wine-name{
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+
 .review-content{
   display: flex;
   padding: 5px;
@@ -212,40 +231,16 @@ main {
 
 .attachment{}
 
-.gokuu{
+
+.avatar{
   width: 80px;
   height: 80px; 
-  border-radius: 50%; 
+  border-radius: 50%;
 }
 
-.bezita{
-  width: 80px;
-  height: 80px;
-  border-radius: 50%; 
-}
-
-.piccoro{
-  width: 80px;
-  height: 80px;
-  border-radius: 50%; 
-}
-
-.wineman{
+.review-image{
   width: 190px;
   height: 190px;
-}
-
-
-a.user-name{
-  color: blue;
-}
-
-a.wine-name{
-  color: blue;
-}
-
-.wine-name{
-
 }
 
 .good-comment{

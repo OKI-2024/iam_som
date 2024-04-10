@@ -18,38 +18,38 @@
         </div><% end %>
       </div>
 
-      <div class="main-second">
-        <div class="reviwes">
-          <div class="review">     
-            <div class="review-top"><%= link_to(image_tag("gokuu.png", alt: "悟空", class: "gokuu"), "#") %><%= link_to "悟空", "#" %>2024/04/03
-              <div class="wine-name"><a href="#" class="wine-name">ワインマン(フランス)</a></div>
-            </div>
-            <div class="review-content">
-              <div class="review-image"><%= link_to image_tag("wineman.jpg", class:"wineman"), "#" %></div>
-              <div class="review-text">チチの誕生日にワインマンを購入し自宅で嗜んだ</div>
-            </div>
-            <div class="attachment"><%= image_tag "good&comment.png", class:"good-comment" %></div>
-          </div>            
-          <div class="review">
-            <div class="review-top"><%= link_to(image_tag("bezita.jpg", alt: "ベジータ", class: "bezita"), "#") %><%= link_to "ベジータ", "#" %>2024/04/03
-              <div class="wine-name"><a href="#" class="wine-name">ワインマン（スペイン）</a></div></div>
-              <div class="review-content">
-                <div class="review-image"><%= link_to image_tag("wineman.jpg", class:"wineman"), "#" %></div>
-                <div class="review-text">チチの誕生日にワインマンを購入し自宅で嗜んだ</div>
-              </div>
-              <div class="attachment">いいねマークとコメントマーク</div>
-          </div>
-          <div class="review">
-            <div class="review-top"><%= link_to(image_tag("piccoro.png", alt: "ピッコロ", class: "piccoro"), "#") %><%= link_to "ピッコロ", "#" %>2024/04/03
-            <div class="wine-name"><a href="#" class="wine-name">ワインマン（ドイツ）</a></div></div>
-            <div class="review-content">
-              <div class="review-image"><%= link_to image_tag("wineman.jpg", class:"wineman"), "#" %></div>
-              <div class="review-text">チチの誕生日にワインマンを購入し自宅で嗜んだ</div>
-            </div>
-            <div class="attachment">いいねマークとコメントマーク</div>
+    <div class="main-second">
+    <div class="reviews">
+
+      <% @reviews.each do |review| %>
+      
+      <div class="review">     
+        
+        <div class="review-top">
+          <%= link_to(image_tag(review.user.avatar, alt: review.user.nickname, class: "avatar"), user_path(review.user)) %>
+          <div class="user-name"><%= link_to review.user.nickname, user_path(review.user) %></div>
+          <div class="wine-date"><%= review.wine_date %></div>
+          <div class="wine-name">
+            <%= link_to "#{review.wine.name} (#{Region.find(review.wine.region_id).name})", "#" %>
           </div>
         </div>
-      </div>
+
+        <div class="review-content">
+          <div class="review-image">
+            <%= link_to image_tag(review.image, class: "review-image"), "#" %>
+          </div>
+          <div class="review-text"><%= review.content %></div>
+        </div>
+
+        <div class="attachment">
+          <%= image_tag "good&comment.png", class: "good-comment" %>
+        </div>
+        </div>
+
+      <% end %>
+    </div>
+    </div>
+
     </main> 
 
 <%= render "shared/footer" %>
