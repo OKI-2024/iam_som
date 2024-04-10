@@ -1,0 +1,31 @@
+
+<%= render "shared/header" %>
+
+<h1><%= @wine.name %> の詳細</h1>
+
+<%= link_to "レビューを投稿する", new_review_path(wine_id: @wine.id), class: "new-review-btn-from-show" %>
+
+<!-- ワインの基本情報表示 -->
+<p>生産国: <%= @wine.region.name %></p>
+<p>生産者: <%= @wine.producer %></p>
+<p>ブドウ品種: <%= @wine.grape_variety.name %></p>
+
+
+<!-- 他のワインの基本情報も同様に表示 -->
+
+<!-- レビュー一覧表示 -->
+<h2>レビュー一覧</h2>
+<% @reviews.each do |review| %>
+  <div class="review">
+    <h3><%= review.user.nickname %> さんのレビュー</h3>
+    <% review.fragrance_reviews.each do |fragrance_review| %>
+      <p>評価: <%= fragrance_review.fragrance.name %></p>
+    <% end %>
+    <p>コメント: <%= review.content %></p>
+    <P>あと写真と酸味甘味渋みアルコールとそのワインの投稿ページへの遷移</P>
+    <P>アマゾンや楽天、その他ワインのECサイトへ飛ぶようなボタンがあれば</P>
+  </div>
+<% end %>
+
+
+<%= render "shared/footer" %>
