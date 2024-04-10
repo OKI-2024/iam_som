@@ -209,7 +209,7 @@ main {
   margin-left: 20px;
 }
 a.user-name-color{
-  color: blue;
+  color: #0066CC;
 }
 
 .wine-date{
@@ -226,13 +226,13 @@ a.user-name-color{
 }
 
 a.wine-name-color{
-  color:  blue;
+  color:  #0066CC;
 }
 
 
 .review-content{
   display: flex;
-  padding: 5px;
+  padding: 10px;
   font-size: 20px;
 }
 

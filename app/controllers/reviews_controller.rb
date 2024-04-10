@@ -9,7 +9,6 @@ def new
 end
 
 def create
-  
   @wine_review_form = WineReviewForm.new(review_params)
   if @wine_review_form.save
     redirect_to root_path

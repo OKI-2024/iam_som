@@ -1,4 +1,5 @@
 class Wine < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :reviews
   belongs_to :region
   belongs_to :grape_variety
