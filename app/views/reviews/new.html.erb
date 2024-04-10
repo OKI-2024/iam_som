@@ -62,7 +62,7 @@
     <div class="review-format-middle-forth">
       <% Fragrance.all.each do |fragrance| %>
       <div class="fragrance-checkboxes">
-        <%= check_box_tag "wine_review_form[fragrance_id][]", fragrance.id, @wine_review_form.fragrance_id.include?(fragrance.id), id: "fragrance_#{fragrance.id}" %>
+        <%= check_box_tag "fragrance_ids[]", fragrance.id, false, id: "fragrance_#{fragrance.id}" %>
         <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
       </div>
       <% end %>   
