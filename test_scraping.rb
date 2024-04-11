@@ -5,9 +5,10 @@ require 'csv'
 base_url = 'https://fikas.shop/'
 url = "#{base_url}?mode=cate&cbid=2336012&csid=10&sort=n"
 
-CSV.open("products.csv", "w") do |csv|
+CSV.open("products.csv", "w:bom|utf-8") do |csv|
   
-  csv << ["Product Name"]
+  
+  csv << ["Product Name"] # CSVのヘッダーを追加
 
 
   loop do
