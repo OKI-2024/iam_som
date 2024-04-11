@@ -3,7 +3,8 @@ require 'nokogiri'
 require 'csv'
 
 base_url = 'https://fikas.shop/'
-url = "#{base_url}?mode=cate&cbid=2336012&csid=10&sort=n"
+url = "#{base_url}?mode=grp&gid=2116525&sort=n"
+
 
 CSV.open("products.csv", "w:bom|utf-8") do |csv|
   
@@ -16,10 +17,13 @@ CSV.open("products.csv", "w:bom|utf-8") do |csv|
 
     html = URI.open(url).read
     doc = Nokogiri::HTML.parse(html)
-    doc.css('ul.itemList.inviewfadeIn li h1').each do |h1|
-      product_name = h1.text.strip
-      puts product_name  # コンソールに出力
-      csv << [product_name]  # CSVファイルに書き込み
+    doc.css('ul.itemList.inviewfadeIn li').each do |li| 
+      product_name = li.css('h1').text.strip # 商品名を取得
+      image_url = li.css('div.photo img').first['src'] # 画像URLを取得
+
+
+      puts "#{product_name}, #{image_url}"  # コンソールに出力
+      csv << [product_name, image_url]  # CSVファイルに書き込み
     end
     next_link = doc.at_css('a.icon.icon_next')
     break unless next_link
