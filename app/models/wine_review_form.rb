@@ -7,7 +7,7 @@ class WineReviewForm
 
   validates :name, presence: true
   validates :wine_date, presence: true
-  validates :grape_variety_id, numericality: { other_than: 1 }
+  validates :grape_variety_id, numericality: { other_than: 1, allow_nil: true }
   validates :type_id, numericality: { other_than: 1 }
   validates :region_id, numericality: { other_than: 1 }
 
@@ -23,7 +23,7 @@ class WineReviewForm
       producer: producer,
       type_id: type_id,
       grape_variety_id: grape_variety_id,
-      region_id: region_id
+      region_id: region_id,
     )
   
     review = Review.create!(
