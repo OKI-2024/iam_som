@@ -5,6 +5,11 @@ def show
   @reviews = @wine.reviews
 end
 
+def search
+  @q = Wine.ransack(params[:q])
+  @wine= @q.result
+end
+
 
 
 
