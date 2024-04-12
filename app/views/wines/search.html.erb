@@ -1,0 +1,8 @@
+<% @wines.each do |wine| %>
+  <div>
+    <h3><%= wine.name %> - <%= wine.producer %></h3>
+    <% wine.reviews.each do |review| %>
+      <p>Review: <%= review.content %></p>
+    <% end %>
+  </div>
+<% end %>

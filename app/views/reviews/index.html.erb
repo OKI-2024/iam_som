@@ -11,9 +11,9 @@
         
         <div class="hoge">キーワード・産地・特徴から検索できるようにする</div>
         <%= form_with url: search_wines_path, method: :get, local: true, html: {class: "search-container"} do |form| %>
-  <%= text_field_tag :keyword, nil, placeholder: "キーワード・産地・特徴", style: "width: 220px; height: 80px;" %>
-  <%= submit_tag "検索", style: "height: 90px; width: 60px;" %>
-<% end %>
+        <%= text_field_tag :keyword, nil, placeholder: "キーワード・産地・特徴", style: "width: 220px; height: 80px;" %>
+        <%= submit_tag "検索", class: "search-container-button", style: "height: 90px; width: 60px;" %>
+        <% end %>
 
         </div>
         
