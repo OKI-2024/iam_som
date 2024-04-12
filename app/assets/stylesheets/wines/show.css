@@ -3,6 +3,7 @@
   display: flex;
   position: relative;
   width: 100%;
+  background-color: #F3F3F3;
 }
 
 .wine-show-main-left{

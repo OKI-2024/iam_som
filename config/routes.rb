@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "reviews#index"
   resources :wines, only: [:show]
   resources :reviews, only: [:index, :new, :create, :destroy]
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update, :show]
 
 
 end
