@@ -15,17 +15,19 @@
 
 <!-- レビュー一覧表示 -->
 <h2>レビュー一覧</h2>
-<% @reviews.each do |review| %>
-  <div class="review">
-    <h3><%= review.user.nickname %> さんのレビュー</h3>
-    <% review.fragrance_reviews.each do |fragrance_review| %>
-      <p>評価: <%= fragrance_review.fragrance.name %></p>
-    <% end %>
-    <p>コメント: <%= review.content %></p>
-    <P>あと写真と酸味甘味渋みアルコールとそのワインの投稿ページへの遷移</P>
-    <P>アマゾンや楽天、その他ワインのECサイトへ飛ぶようなボタンがあれば</P>
-  </div>
-<% end %>
+
+
+
+<%= render "shared/review_index"%>
+
+
+
+
+<%= link_to(new_review_path, class: 'post-review-btn') do %>
+        <div class="post-review-text">レビュー投稿
+        <%= image_tag 'wine-glass.png', size: '185x50' ,class: "post-review-btn-icon" %>
+        </div><% end %>
+      </div>
 
 
 <%= render "shared/footer" %>
