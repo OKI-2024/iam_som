@@ -1,3 +1,5 @@
+<%= render "shared/header" %>
+
 <% @wines.each do |wine| %>
   <div>
     <h3><%= wine.name %> - <%= wine.producer %></h3>
@@ -6,3 +8,5 @@
     <% end %>
   </div>
 <% end %>
+
+<%= render "shared/footer" %>

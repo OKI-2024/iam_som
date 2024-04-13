@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 body {
   font-family: "Meiryo", sans-serif;
 }
@@ -139,9 +140,6 @@ main {
   object-fit: cover;
   margin-bottom: 30px;
 }
-.hoge {
-  font-size: 15px;
-}
 .post-review-btn{
   width: 120px;
   background: #666633;
@@ -163,6 +161,16 @@ main {
 }
 .post-review-btn-icon{
   width: 60%;
+}
+
+
+.btn-primary{
+  width: 200px;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 3px solid white;
+  background-color: #663333;
+
 }
 
 
