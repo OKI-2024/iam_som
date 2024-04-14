@@ -1,14 +1,15 @@
 <%= render "shared/header" %>
 
-<% @wines.each do |wine| %>
-  <div class="search-result-index">
-    <h3>ワイン名：<%= wine.name %></h3>
-    <h3>生産者：<%= wine.producer %></h3>
-    <% wine.reviews.each do |review| %>
-      <p>レビュー: <%= review.content %></p>
-      <p>投稿者: <%= review.user.nickname %></p>
-    <% end %>
-  </div>
+<% if @wines.present? %>
+  <% @wines.each do |wine| %>
+    <div class="search-result-index">
+      <h3>ワイン名：<%= wine.name %></h3>
+      <h3>生産者：<%= wine.producer %></h3>
+    </div>
+  <% end %>
+<% else %>
+  <p>検索結果がありません。</p>
 <% end %>
+
 
 <%= render "shared/footer" %>
