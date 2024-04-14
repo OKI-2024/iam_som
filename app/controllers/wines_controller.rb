@@ -6,26 +6,17 @@ def show
 end
 
 def search
-  keyword = params[:keyword]
-
-  @wines = Wine.joins(:reviews)
-               .where("wines.name LIKE :keyword OR wines.producer LIKE :keyword OR reviews.content LIKE :keyword", keyword: "%#{keyword}%")
-               .distinct
-
-  if params[:types].present?
-    @wines = @wines.where(type_id: params[:types])
+  if params[:keyword].present?
+    @wines = Wine.joins(:reviews).where("wines.name LIKE :search OR wines.producer LIKE :search OR reviews.content LIKE :search", search: "%#{params[:keyword]}%").distinct
+  else
+    @wines = Wine.all
+    @wines = @wines.where(type_id: params[:type_ids]) if params[:type_ids].present?
+    @wines = @wines.where(region_id: params[:region_ids]) if params[:region_ids].present?
+    @wines = @wines.where(grape_variety_id: params[:grape_variety_ids]) if params[:grape_variety_ids].present?
+    @wines = @wines.distinct
   end
 
-  if params[:regions].present?
-    @wines = @wines.where(region_id: params[:regions])
-  end
-
-  if params[:grape_varieties].present?
-    @wines = @wines.where(grape_variety_id: params[:grape_varieties])
-  end
+  render 'search'
 end
-
-
-
 
 end
