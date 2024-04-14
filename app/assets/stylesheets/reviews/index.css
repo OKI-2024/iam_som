@@ -125,6 +125,60 @@ main {
   font-weight: bold;
 }
 
+.modal-body{
+  color: black;
+  font-size: 14px;
+}
+
+/* チェックボックスとラベルのコンテナに適用 */
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 各項目の間隔を設定 */
+  border: #CCC solid 1px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center; /* チェックボックスとラベルの縦位置を揃える */
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 5px; /* チェックボックスとラベルの間隔 */
+}
+
+.checkbox-container h5 {
+  margin-bottom: 10px; /* タイトル下の余白 */
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: #CCC solid 1px;
+}
+
+.checkbox-container {
+  margin-top: 20px; /* セクション間の余白 */
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline; /* ラベルが基線に沿って整列する */
+}
+
+.checkbox-item {
+  flex: 1 1 20%; /* 各アイテムが行内で均等に配置される */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center; /* チェックボックスとラベルが垂直方向の中央に来るよう調整 */
+}
+
+.modal-footer{
+  justify-content: center;
+}
+
+
+
 
 .logo {
   margin-top: 30px;
@@ -154,9 +208,10 @@ main {
 .post-review-text{
   color: #fff;
   display: block;
-  font-size: 18px;
+  font-size: 15px;
   text-decoration: none;
   margin-bottom: 5px;
+  font-weight: bold;
 
 }
 .post-review-btn-icon{

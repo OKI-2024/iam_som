@@ -1,41 +1,67 @@
 
-      
-  <%= render "shared/header" %>
+        
+    <%= render "shared/header" %>
 
-      <main>
-        <div class="main-first">
-          
-          <%= image_tag "wine.jpg", class:"wine" %>  
-          <div class="description">あなたのお気に入りのナチュラルワインがきっと見つかる</div>
-          <div class="logo"><%= image_tag "logo.png", class:"logo" %> </div>
+        <main>
+          <div class="main-first">
+            
+            <%= image_tag "wine.jpg", class:"wine" %>  
+            <div class="description">あなたのお気に入りのナチュラルワインがきっと見つかる</div>
+            <div class="logo"><%= image_tag "logo.png", class:"logo" %> </div>
 
-          <!-- モーダルウィンドウ -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
-            条件を絞る
-          </button>
-          
-          <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="searchModalLabel">検索条件</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <%= form_with url: search_wines_path, method: :get, local: true do |f| %>
-                    <% Type.all.each do |type| %>
-                      <%= check_box_tag "type_ids[]", type.id, false, id: "type_id_#{type.id}" %>
-                      <%= label_tag "type_id_#{type.id}", type.name %><br>
-                    <% end %>
-                    <% Region.all.each do |region| %>
-                      <%= check_box_tag "region_ids[]", region.id, false, id: "region_id_#{region.id}" %>
-                      <%= label_tag "region_id_#{region.id}", region.name %><br>
-                    <% end %>
-                    <% GrapeVariety.all.each do |grape_variety| %>
-                      <%= check_box_tag "grape_variety_ids[]", grape_variety.id, false, id: "grape_variety_id_#{grape_variety.id}" %>
-                      <%= label_tag "grape_variety_id_#{grape_variety.id}", grape_variety.name %><br>
-                    <% end %>
-                              
+            <!-- モーダルウィンドウ -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
+              条件を絞る
+            </button>
+            
+            <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+              <div class="modal-dialog  modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">検索条件</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                 <%= form_with url: search_wines_path, method: :get, local: true do |f| %>
+                    <div class="checkbox-container">
+                      <h5>ワインの種類</h5>
+                      <div class="checkbox-group">
+                        <% Type.all.each do |type| %>
+                          <div class="checkbox-item">
+                            <%= check_box_tag "type_ids[]", type.id, false, id: "type_id_#{type.id}" %>
+                            <%= label_tag "type_id_#{type.id}", type.name %>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+
+                    <div class="checkbox-container">
+                      <h5>ワインの生産地</h5>
+                      <div class="checkbox-group">
+                        <% Region.all.each do |region| %>
+                          <div class="checkbox-item">
+                            <%= check_box_tag "region_ids[]", region.id, false, id: "region_id_#{region.id}" %>
+                            <%= label_tag "region_id_#{region.id}", region.name %>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+
+                    <div class="checkbox-container">
+                      <h5>ブドウの品種</h5>
+                      <div class="checkbox-group">
+                        <% GrapeVariety.all.each do |grape_variety| %>
+                          <div class="checkbox-item">
+                            <%= check_box_tag "grape_variety_ids[]", grape_variety.id, false, id: "grape_variety_id_#{grape_variety.id}" %>
+                            <%= label_tag "grape_variety_id_#{grape_variety.id}", grape_variety.name %>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+
+                    <div class="modal-footer">
+                       <%= f.submit "検索", class: "btn btn-primary" %>
+                    </div>
                   <% end %>
                 </div>
               </div>
@@ -43,29 +69,29 @@
           </div>  
           <!-- モーダルウィンドウ -->
 
-          <%= form_with url: search_wines_path, method: :get, local: true, html: {class: "search-container"} do |form| %>
-          <%= text_field_tag :keyword, nil, placeholder: "キーワード・ワイン名・生産者名", style: "width: 220px; height: 80px;" %>
-          <%= submit_tag "検索", class: "search-container-button", style: "height: 80px; width: 60px;" %>
-          <% end %>
+            <%= form_with url: search_wines_path, method: :get, local: true, html: {class: "search-container"} do |form| %>
+            <%= text_field_tag :keyword, nil, placeholder: "キーワード・ワイン名・生産者名", style: "width: 220px; height: 80px;" %>
+            <%= submit_tag "検索", class: "search-container-button", style: "height: 80px; width: 60px;" %>
+            <% end %>
+            </div>
+
+                  
+            <%= link_to(new_review_path, class: 'post-review-btn') do %>
+            <div class="post-review-text">レビュー投稿
+            <%= image_tag 'wine-glass.png', size: '185x50' ,class: "post-review-btn-icon" %>
+            </div>
+            <% end %>
+
           </div>
 
-                
-          <%= link_to(new_review_path, class: 'post-review-btn') do %>
-          <div class="post-review-text">レビュー投稿
-          <%= image_tag 'wine-glass.png', size: '185x50' ,class: "post-review-btn-icon" %>
-          </div>
-          <% end %>
-
-        </div>
-
-      
-
-        <%= render "shared/review_index"%>
         
-      
 
-      </main> 
+          <%= render "shared/review_index"%>
+          
+        
 
-  <%= render "shared/footer" %>
+        </main> 
 
-  
+    <%= render "shared/footer" %>
+
+    
