@@ -1,36 +1,33 @@
-
 <%= render "shared/header" %>
 
 <div class="wine-show-main">
-  <div class="wine-show-main-left">
-    <p><%= @wine.name %></P>
-    <p><%= @wine.type.name %></P>
-    <p><%= @wine.grape_variety ? @wine.grape_variety.name : '情報なし' %></P>
-    <p><%= @wine.region.name %></P>
-    <p><%= @wine.producer %></P>
-
-  </div>
   <div class="wine-show-main-center">
-   <% if @wine.image.attached? %>
-      <%= image_tag @wine.image, class: "wine-image" %>
-       <% else %>
-      <p>No Image</p>
-    <% end %>
-  </div>
+    <div class="wine-info">
+      <ul>
+        <li><strong>ワイン名:</strong> <%= @wine.name %></li>
+        <li><strong>種類:</strong> <%= @wine.type.name %></li>
+        <li><strong>ブドウ品種:</strong> <%= @wine.grape_variety ? @wine.grape_variety.name : '情報なし' %></li>
+        <li><strong>生産地:</strong> <%= @wine.region.name %></li>
+        <li><strong>生産者:</strong> <%= @wine.producer %></li>
+      </ul>
+    </div>
 
+    <div class="wine-image-container">
+      <% if @wine.image.attached? %>
+        <%= image_tag @wine.image, class: "wine-image" %>
+      <% else %>
+        <p>No Image</p>
+      <% end %>
+      <%= link_to(new_review_path, class: 'detail-page-review-btn') do %>
+    <div class="detail-page-review-text">レビュー投稿
+      <%= image_tag 'wine-glass.png', size: '185x50', class: "detail-page-review-btn-icon" %>
+    </div>
+      <% end %>
+
+    </div>
+  </div>
 </div>
 
-
-<%= render "shared/review_index"%>
-
-
-
-
-<%= link_to(new_review_path, class: 'post-review-btn') do %>
-        <div class="post-review-text">レビュー投稿
-        <%= image_tag 'wine-glass.png', size: '185x50' ,class: "post-review-btn-icon" %>
-        </div><% end %>
-      </div>
-
+<%= render "shared/review_index" %>
 
 <%= render "shared/footer" %>
