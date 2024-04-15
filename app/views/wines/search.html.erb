@@ -9,6 +9,8 @@
     <% if @type_names.present? || @region_names.present? || @grape_variety_names.present? %>
       (<%= [@type_names, @region_names, @grape_variety_names].reject { |name| name.blank? }.join(", ") %>)
     <% end %>
+    <br>
+    <%= @wines.count %>件のワインがみつかりました
   </div>
   <div class="search-result">
     <% @wines.each do |wine| %>
@@ -26,7 +28,6 @@
         <% end %>
         <%= link_to "このワインの詳細へ", wine_path(wine), class: "details-link" %>
       </div>
-      
     <% end %>
   </div>    
 <% else %>
