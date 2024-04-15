@@ -4,13 +4,18 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
     @reviews = @wine.reviews
   end
-
+  
+  
   def search
     @wines = Wine.all
+    @keywords = params[:keyword] || ""
+    @type_names = Type.where(id: params[:type_ids]).pluck(:name).join(", ")
+    @region_names = Region.where(id: params[:region_ids]).pluck(:name).join(", ")
+    @grape_variety_names = GrapeVariety.where(id: params[:grape_variety_ids]).pluck(:name).join(", ")
 
-    if params[:keyword].present?
+    if @keywords.present?
       @wines = @wines.joins("LEFT JOIN reviews ON reviews.wine_id = wines.id")
-                     .where("wines.name LIKE :keyword OR wines.producer LIKE :keyword OR reviews.content LIKE :keyword", keyword: "%#{params[:keyword]}%")
+                     .where("wines.name LIKE :keyword OR wines.producer LIKE :keyword OR reviews.content LIKE :keyword", keyword: "%#{@keywords}%")
                      .distinct
     else
       @wines = @wines.where(type_id: params[:type_ids]) if params[:type_ids].present?
@@ -21,4 +26,4 @@ class WinesController < ApplicationController
 
     render 'search'
   end
-  end
+end
