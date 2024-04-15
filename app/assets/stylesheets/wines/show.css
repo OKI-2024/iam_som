@@ -1,3 +1,37 @@
-a.new-review-btn-from-show{
-  color: blue;
-} 
+.wine-show-main{
+  min-height: 60vh;
+  display: flex;
+  position: relative;
+  width: 100%;
+  background-color: #F3F3F3;
+}
+
+.wine-show-main-left{
+  background-color: white;
+  width: 300px;
+  height: 550px;
+  border-radius: 20px;
+  border: 1px solid #F3F3F3;
+  margin: 10px 0 10px 150px;
+}
+
+.wine-show-main-center{
+  background-color: white;
+  width: 1200px;
+  height: 90%;
+  margin: 10px 0;
+  border-radius: 20px;
+  
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.wine-image{
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+
+}

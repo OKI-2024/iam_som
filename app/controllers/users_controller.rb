@@ -12,7 +12,10 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def show
+    @user = User.find(params[:id])
+    @reviews = Review.where(user_id: @user.id)
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :avatar, :introduction)

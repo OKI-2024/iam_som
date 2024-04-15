@@ -1,0 +1,35 @@
+<div class="main-second">
+  <div class="reviews">
+    <% if @reviews.any? %>
+      <% @reviews.each do |review| %>
+        <div class="review">     
+          <div class="review-top">
+            <%= link_to(image_tag(review.user.avatar, alt: review.user.nickname, class: "avatar"), user_path(review.user)) %>
+            <div class="user-name"><%= link_to review.user.nickname, user_path(review.user), class: "user-name-color" %></div>
+            <div class="wine-date"><%= review.wine_date %></div>
+            <div class="wine-name">
+              <%= link_to "#{review.wine.name} （ #{Region.find(review.wine.region_id).name} ）", wine_path(review.wine), class: "wine-name-color" %>
+            </div>
+          </div>
+
+          <div class="review-content">
+            <div class="review-image">
+              <% if review.image.attached? %>
+                <%= link_to image_tag(review.image, class: "review-image"), "#" %>
+              <% end %>
+            </div>
+            <div class="review-text"><%= review.content %></div>
+          </div>
+
+          <div class="attachment">
+            <%= image_tag "good&comment.png", class: "good-comment" %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="no-reviews">
+        <p>レビューがまだありません。あなたのレビューを投稿してください！</p>
+      </div>
+    <% end %>
+  </div>
+</div>

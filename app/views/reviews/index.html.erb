@@ -1,57 +1,97 @@
 
-    
-<%= render "shared/header" %>
+          
+      <%= render "shared/header" %>
 
-    <main>
-      <div class="main-first">
-        <%= image_tag "wine.jpg", class:"wine" %>  
-        <div class="description">お気に入りのワインが見つかる日本最大のワイン検索サイト</div>
-        <div class="logo"><%= image_tag "logo.png", class:"logo" %> </div>
-        <div class="hoge">キーワード・産地・特徴から検索できるようにする</div>
-        <div class="search-container">
-          <input type="text" style="width: 220px; height: 80px;" placeholder="キーワード・産地・特徴">
-          <button type="submit">検索</button>
-        </div>
-        <%= link_to(new_review_path, class: 'post-review-btn') do %>
-        <div class="post-review-text">レビュー投稿
-        <%= image_tag 'wine-glass.png', size: '185x50' ,class: "post-review-btn-icon" %>
-        </div><% end %>
-      </div>
+          <main>
+            <div class="main-first">
+              
+              <%= image_tag "wine.jpg", class:"wine" %>  
+              <div class="description">あなたのお気に入りのナチュラルワインがきっと見つかる</div>
+              <div class="logo"><%= image_tag "logo.png", class:"logo" %> </div>
 
-    <div class="main-second">
-    <div class="reviews">
+              <!-- モーダルウィンドウ -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
+                条件を絞って検索する
+              </button>
+              
+              <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+                <div class="modal-dialog  modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="searchModalLabel">検索条件</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                  <%= form_with url: search_wines_path, method: :get, local: true do |f| %>
+                      <div class="checkbox-container">
+                        <h5>ワインの種類</h5>
+                        <div class="checkbox-group">
+                          <% Type.all.each do |type| %>
+                            <div class="checkbox-item">
+                              <%= check_box_tag "type_ids[]", type.id, false, id: "type_id_#{type.id}" %>
+                              <%= label_tag "type_id_#{type.id}", type.name %>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
 
-      <% @reviews.each do |review| %>
+                      <div class="checkbox-container">
+                        <h5>ワインの生産地</h5>
+                        <div class="checkbox-group">
+                          <% Region.all.each do |region| %>
+                            <div class="checkbox-item">
+                              <%= check_box_tag "region_ids[]", region.id, false, id: "region_id_#{region.id}" %>
+                              <%= label_tag "region_id_#{region.id}", region.name %>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+
+                      <div class="checkbox-container">
+                        <h5>ブドウの品種</h5>
+                        <div class="checkbox-group">
+                          <% GrapeVariety.all.each do |grape_variety| %>
+                            <div class="checkbox-item">
+                              <%= check_box_tag "grape_variety_ids[]", grape_variety.id, false, id: "grape_variety_id_#{grape_variety.id}" %>
+                              <%= label_tag "grape_variety_id_#{grape_variety.id}", grape_variety.name %>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+
+                      <div class="modal-footer">
+                        <%= f.submit "検索", class: "btn btn-primary" %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>  
+            <!-- モーダルウィンドウ -->
+
+              <%= form_with url: search_wines_path, method: :get, local: true, html: {class: "search-container"} do |form| %>
+              <%= text_field_tag :keyword, nil, placeholder: "キーワード・ワイン名・生産者名", style: "width: 220px; height: 80px;" %>
+              <%= submit_tag "検索", class: "search-container-button", style: "height: 80px; width: 60px;" %>
+              <% end %>
+              </div>
+
+                    
+              <%= link_to(new_review_path, class: 'post-review-btn') do %>
+              <div class="post-review-text">レビュー投稿
+              <%= image_tag 'wine-glass.png', size: '185x50' ,class: "post-review-btn-icon" %>
+              </div>
+              <% end %>
+
+            </div>
+
+          
+
+            <%= render "shared/review_index"%>
+            
+          
+
+          </main> 
+
+      <%= render "shared/footer" %>
+
       
-      <div class="review">     
-        
-        <div class="review-top">
-          <%= link_to(image_tag(review.user.avatar, alt: review.user.nickname, class: "avatar"), user_path(review.user)) %>
-          <div class="user-name"><%= link_to review.user.nickname, user_path(review.user), class: "user-name-color" %></div>
-          <div class="wine-date"><%= review.wine_date %></div>
-          <div class="wine-name">
-            <%= link_to "#{review.wine.name} （ #{Region.find(review.wine.region_id).name} ）", wine_path(review.wine), class: "wine-name-color" %>
-          </div>
-        </div>
-
-        <div class="review-content">
-          <div class="review-image">
-            <%= link_to image_tag(review.image, class: "review-image" ), "#" if review.image.attached? %>
-          </div>
-          <div class="review-text"><%= review.content %></div>
-        </div>
-
-        <div class="attachment">
-          <%= image_tag "good&comment.png", class: "good-comment" %>
-        </div>
-        </div>
-
-      <% end %>
-    </div>
-    </div>
-
-    </main> 
-
-<%= render "shared/footer" %>
-
- 
