@@ -53,17 +53,17 @@
       <label for="<%= radio_id %>"><%= option.name %></label>
     <% end %>
 
-  <% end %>
-</div>
-    <div class="review-format-middle-forth">
-      <% Fragrance.all.each do |fragrance| %>
-  <div class="fragrance-checkboxes">
-    <%= check_box_tag "fragrance_ids[]", fragrance.id, false, id: "fragrance_#{fragrance.id}" %>
-    <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
-  </div>
-<% end %>   
+    <% end %>
     </div>
-    <div class="review-format-middle-fifth">
+    <div class="review-format-middle-forth">
+        <% Fragrance.all.each do |fragrance| %>
+    <div class="fragrance-checkboxes">
+      <%= check_box_tag "fragrance_ids[]", fragrance.id, false, id: "fragrance_#{fragrance.id}" %>
+      <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
+    </div>
+    <% end %>   
+      </div>
+      <div class="review-format-middle-fifth">
       <%= form.label :content, "感想", class: "content-label" %>
 <%= form.text_area :content, id: "content", class: "content-variety", placeholder: "感想（風味や香り、お店、料理など）例）三軒茶屋のララムリでソラマメのフリットと一緒にたべたよ＾＾", rows: "7", maxlength: "1000" %>
     </div>
