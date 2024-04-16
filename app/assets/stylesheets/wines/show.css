@@ -55,10 +55,10 @@
 }
 
 .detail-page-review-btn {
-  width: 120px;
+  width: 260px;
   background: #666633;
   text-align: center;
-  border-radius: 4%;
+  border-radius: 20px;
   padding: 15px;
   position: absolute;
   top: 20px;
@@ -69,7 +69,6 @@
   display: block;
   font-size: 15px;
   text-decoration: none;
-  margin-bottom: 5px;
   font-weight: bold;
 }
 
