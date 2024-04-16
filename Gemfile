@@ -73,6 +73,7 @@ end
 
 gem 'bootstrap', '~> 5.2.3'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'mini_racer'
 gem 'devise'
 gem 'mini_magick'
@@ -83,3 +84,4 @@ gem 'ancestry'
 gem 'nokogiri'
 gem 'byebug'
 gem 'ransack'
+gem 'moji'

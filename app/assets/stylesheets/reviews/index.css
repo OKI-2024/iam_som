@@ -35,9 +35,7 @@ a {
   
 
 }
-.notification {
-  
-}
+
 .icon {
   margin-right: 50px;
 }
@@ -94,9 +92,7 @@ main {
   align-items: center;
   flex-direction: column;
   }
-.description {
-  
-}
+
 .search-container {
   display: flex;
   align-items: center;
@@ -306,7 +302,6 @@ a.wine-name-color{
   padding: 10px;
 }
 
-.attachment{}
 
 
 .avatar{
