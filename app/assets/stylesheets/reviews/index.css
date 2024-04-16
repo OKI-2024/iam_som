@@ -3,10 +3,13 @@ body {
   font-family: "Meiryo", sans-serif;
 }
 a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 
+a:hover {
+  color: white;
+}
 /* ヘッダー（始） */
 
 .navbar {
@@ -17,8 +20,7 @@ a {
   justify-content: space-between;
   font-size: 20px;
   padding-top: 20px;
-  font-weight: bold;
-  
+  font-weight: bold;  
 }
 .nav-left {
   display: flex;
@@ -243,8 +245,8 @@ main {
 }
 .review{
   background-color: white;
-  width: 1200px;
-  height: 320px;
+  width: 900px;
+  height: 300px;
   margin: 10px 0;
   border-radius: 20px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
@@ -278,8 +280,10 @@ a.user-name-color{
 }
 
 .wine-name{
-  flex-grow: 0;
-  flex-shrink: 0;
+  max-width: 100%;
+  font-size: clamp(14px, 2.5vw, 18px);
+  white-space: normal;
+  overflow-wrap: break-word;
   
 }
 

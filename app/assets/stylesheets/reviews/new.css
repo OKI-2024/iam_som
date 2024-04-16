@@ -1,171 +1,135 @@
-.review-new-main{
-  width: 100vw;
-  height: 100vh;
-  background-color: #F3F3F3;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.review-invitation{
-  font-size: 30px;
-  font-weight: bold;
-  color: #663333;
-  margin-bottom: 20px;
-}
-
-.review-format{
-  width: 80%;
-  height: 80%;
-  background-color: white;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #444444;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
-
-.review-format-upper{
-  height: 15%;
-  width: 90%;
-  border-bottom:black;
-  border-bottom: 2px solid #CCC;
+.title {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
   font-weight: bold;
 }
 
-.date-field{
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.name-field{
-  border-radius: 5px;
-  border-color: #ccc;
+
+.wine-info p {
+  font-size: 16px;
+  color: #555;
 }
 
-
-.review-format-middle{
-  height: 70%;
-  width: 90%;
-  border-bottom:black;
-  border-bottom: 2px solid #CCC;
-  font-weight: bold;
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-.review-format-middle-first{
-  height: 13%;
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.image-upload-container {
   display: flex;
-  
+  align-items: center; /* 中央揃え */
+  gap: 20px; /* 20pxの間隔を設ける */
 }
 
-.wine-bar-field{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.type-field{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.grape-variety-field{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
+.image-upload-group label {
+  display: block;
+  margin-bottom: 10px; /* ラベルと入力フィールドの間隔 */
 }
 
-
-.review-format-middle-second{
-  height: 13%;
-  display: flex;
- 
+.image-upload-group input[type="file"] {
+  flex-grow: 1;
 }
 
-.producer-variety{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-
-.region-field{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-
-
-
-.review-format-middle-third{
-  height: 14%;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.review-format-middle-forth{
-  height: 30%;
-  border-radius: 5px;
-  border-color: #ccc;
-  display: flex;
-  flex-wrap: wrap;
-}
-.fragrance-checkboxes{
-  margin-right: 20px
-}
-
-
-.review-format-middle-fifth{
-  height: 40%;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.content-variety{
-  width: 90%;
-  height: 60%;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-
-
-.review-format-bottom{
-  height: 15%;
-  width: 90%;
-  display: flex;
-  justify-content: center;
-}
-
-.review-btn{
-  background-color: #666633;
-  color: white;
-  font-weight: bold;
-  font-size: 25px;
-  border: none;
-  width: 60%;
-  border-radius: 40px;
-  margin: 5px 0;
+.image-upload-group img {
+  display: none; /* JavaScriptで表示を切り替える */
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .fragrance-category {
+  margin-bottom: 15px;
+}
+
+.fragrance-item label {
+  display: flex;
+  align-items: center;
+}
+
+.fragrance-item input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #663333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.fragrance-select-btn {
+  padding: 6px 12px; /* 高さのパッディングはそのまま、横のパッディングは元の半分に */
+  background-color: #34495E; /* 深いネイビーブルー色 */
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 30%;
+
+}
+
+.close {
+  cursor: pointer;
+}
+
+.attributes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Space evenly within container */
+}
+
+.attribute-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* Space evenly within row */
+  margin-bottom: 20px; /* Space between rows */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 45%; /* Each attribute group takes about 45% of container */
+  padding: 0 10px; /* Padding within group */
   margin-bottom: 20px;
 }
 
-.fragrance-category h4 {
-  margin-bottom: 10px; /* タイトル下の余白 */
-  font-size: 20px;
-  font-weight: bold;
-  
-
+.attribute-label {
+  margin-bottom: 10px; /* Space between label and options */
 }
 
-
-.fragrance-checkboxes {
+.radio-options {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 10px;
+  align-items:center;
 }
 
-.fragrance-item {
-  flex: 1 1 200px;
+.radio-label {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Space between radio buttons */
 }
