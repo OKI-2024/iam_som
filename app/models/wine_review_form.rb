@@ -3,9 +3,9 @@ class WineReviewForm
 
   attr_accessor :name, :producer, :type_id, :grape_variety_id, :region_id,
                 :wine_date, :content, :wine_bar, :sweetness, :bitterness,
-                :acidity, :alcohol, :fragrance_ids, :image, :user_id
+                :acidity, :alcohol, :fragrance_ids, :image, :user_id, :wine_id
 
-  validates :name, presence: true
+  
   validates :wine_date, presence: true
   validates :grape_variety_id, numericality: { other_than: 1, allow_nil: true }
   validates :type_id, numericality: { other_than: 1 }

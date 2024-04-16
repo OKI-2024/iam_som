@@ -18,7 +18,7 @@
       <% else %>
         <p>No Image</p>
       <% end %>
-      <%= link_to(new_review_path, class: 'detail-page-review-btn') do %>
+      <%= link_to(new_wine_review_path(wine_id: @wine.id), class: 'detail-page-review-btn') do %>
     <div class="detail-page-review-text">このワインのレビューを投稿する</div>
       <% end %>
 
