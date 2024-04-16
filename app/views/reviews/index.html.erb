@@ -70,18 +70,13 @@
             <!-- モーダルウィンドウ -->
 
               <%= form_with url: search_wines_path, method: :get, local: true, html: {class: "search-container"} do |form| %>
-              <%= text_field_tag :keyword, nil, placeholder: "キーワード・ワイン名・生産者名", style: "width: 220px; height: 80px;" %>
+              <%= text_field_tag :keyword, nil, id: 'wine_search', placeholder: "キーワード・ワイン名・生産者名", style: "width: 220px; height: 80px;" %>
               <%= submit_tag "検索", class: "search-container-button", style: "height: 80px; width: 60px;" %>
               <% end %>
               </div>
 
                     
-              <%= link_to(new_review_path, class: 'post-review-btn') do %>
-              <div class="post-review-text">レビュー投稿
-              <%= image_tag 'wine-glass.png', size: '185x50' ,class: "post-review-btn-icon" %>
-              </div>
-              <% end %>
-
+        
             </div>
 
           

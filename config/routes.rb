@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :wines, only: [:show] do
     collection do
       get 'search'
+      get 'autocomplete'
     end
+    resources :reviews, only: [:new, :create]
   end
-  resources :reviews, only: [:index, :new, :create, :destroy]
+  resources :reviews, only: [:index, :destroy]
   resources :users, only: [:edit, :update, :show]
-
-
 end

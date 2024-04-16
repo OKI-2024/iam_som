@@ -1,4 +1,4 @@
-.wine-show-main{
+.wine-show-main {
   min-height: 60vh;
   display: flex;
   position: relative;
@@ -6,32 +6,72 @@
   background-color: #F3F3F3;
 }
 
-.wine-show-main-left{
-  background-color: white;
-  width: 300px;
-  height: 550px;
-  border-radius: 20px;
-  border: 1px solid #F3F3F3;
-  margin: 10px 0 10px 150px;
-}
-
-.wine-show-main-center{
+.wine-show-main-center {
   background-color: white;
   width: 1200px;
   height: 90%;
-  margin: 10px 0;
+  margin: 10px auto;
   border-radius: 20px;
-  
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
+  position: relative;
 }
 
-.wine-image{
-  width: 500px;
-  height: 500px;
-  border-radius: 20px;
+.wine-info {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 16px; /* 適切なフォントサイズに調整 */
+  width: 400px; /* 適切な幅に調整 */
+}
 
+.wine-info ul {
+  list-style-type: none; /* リストのスタイルをなしに */
+  padding: 0;
+}
+
+.wine-info li {
+  margin-bottom: 10px; /* 項目間の間隔 */
+}
+
+.wine-info strong {
+  font-weight: bold; /* 見出しを太字に */
+  color: #333; /* 見出しの色を暗めにして区別 */
+}
+
+.wine-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-grow: 1;
+  position: relative;
+}
+
+.wine-image {
+  width: 600px;
+  height: 600px;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+.detail-page-review-btn {
+  width: 260px;
+  background: #666633;
+  text-align: center;
+  border-radius: 20px;
+  padding: 15px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.detail-page-review-text {
+  color: #fff;
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.detail-page-review-btn-icon {
+  width: 60%;
 }

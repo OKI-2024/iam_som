@@ -9,6 +9,8 @@
     <% if @type_names.present? || @region_names.present? || @grape_variety_names.present? %>
       (<%= [@type_names, @region_names, @grape_variety_names].reject { |name| name.blank? }.join(", ") %>)
     <% end %>
+    <br>
+    <%= @wines.count %>件のワインがみつかりました
   </div>
   <div class="search-result">
     <% @wines.each do |wine| %>
@@ -17,6 +19,7 @@
           <h3>ワイン名：<%= wine.name %></h3>
           <h3>生産者：<%= wine.producer %></h3>
           <h3>生産地：<%= wine.region.name %></h3>
+          <h4>レビュー数：<%= wine.reviews.count %>件</h4>
         </div>
         <% if wine.image.attached? %>
           <%= image_tag wine.image, class: "wine-image-index" %>
