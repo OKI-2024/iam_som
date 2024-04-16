@@ -145,3 +145,27 @@
   border-radius: 40px;
   margin: 5px 0;
 }
+
+.fragrance-category {
+  margin-bottom: 20px;
+}
+
+.fragrance-category h4 {
+  margin-bottom: 10px; /* タイトル下の余白 */
+  font-size: 20px;
+  font-weight: bold;
+  
+
+}
+
+
+.fragrance-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.fragrance-item {
+  flex: 1 1 200px;
+}

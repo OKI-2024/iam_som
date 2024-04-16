@@ -56,13 +56,43 @@
     <% end %>
     </div>
     <div class="review-format-middle-forth">
-        <% Fragrance.all.each do |fragrance| %>
-    <div class="fragrance-checkboxes">
-      <%= check_box_tag "fragrance_ids[]", fragrance.id, false, id: "fragrance_#{fragrance.id}" %>
-      <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
-    </div>
-    <% end %>   
+    <!-- Trigger button for modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fragranceModal">
+      香りを選択
+    </button> 
+    <!-- Fragrance Modal -->
+    <div class="modal fade" id="fragranceModal" tabindex="-1" role="dialog" aria-labelledby="fragranceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="fragranceModalLabel">香りの選択</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <% Fragrance.all.group_by(&:category).each do |category, fragrances| %>
+              <div class="fragrance-category">
+                <h4><%= category %></h4>
+                <div class="fragrance-checkboxes">
+                  <% fragrances.each do |fragrance| %>
+                    <div class="fragrance-item">
+                      <%= check_box_tag "fragrance_ids[]", fragrance.id, false, id: "fragrance_#{fragrance.id}" %>
+                      <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            </div>
+              <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
       </div>
+    </div>
+</div>  
+      
       <div class="review-format-middle-fifth">
       <%= form.label :content, "感想", class: "content-label" %>
 <%= form.text_area :content, id: "content", class: "content-variety", placeholder: "感想（風味や香り、お店、料理など）例）三軒茶屋のララムリでソラマメのフリットと一緒にたべたよ＾＾", rows: "7", maxlength: "1000" %>
