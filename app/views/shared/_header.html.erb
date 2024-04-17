@@ -17,8 +17,12 @@
           
           
           <% if current_user %>
-          <ul class="icon"><%= link_to image_tag(current_user.avatar, class:"icon"), user_path(current_user) %></ul>
-          
+            <ul class="icon">
+              <%= link_to(
+                image_tag(current_user.avatar.attached? ? current_user.avatar : 'wa.png', class: "icon"),
+                user_path(current_user)
+              ) %>
+            </ul>
           <% end %>
         </div>
       </div>
