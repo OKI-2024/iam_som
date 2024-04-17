@@ -3,7 +3,7 @@
 <div class="container">
     <h1 class="title">ワインのレビューを投稿しよう</h1>
     
-    <%= form_with model: [@wine, @review], url: wine_reviews_path, local: true, html: { class: "review-form" } do |form| %>
+    <%= form_with model: [@wine, @review], url: wine_review_path(@wine, @review), local: true, html: { class: "review-form" } do |form| %>
         <div class="wine-info">
             <p><strong>ワイン名:</strong> <%= @wine.name %></p>
             <p><strong>種類:</strong> <%= @wine.type.name %></p>
@@ -94,7 +94,7 @@
         </div>
 
         <div class="form-actions">
-            <%= form.submit "投稿する", class: "btn submit-btn" %>
+            <%= form.submit "更新する", class: "btn submit-btn" %>
         </div>
     <% end %>
 </div>

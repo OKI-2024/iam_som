@@ -296,6 +296,7 @@ a.wine-name-color{
   display: flex;
   padding: 10px;
   font-size: 20px;
+  position: relative;
 }
 
 .review-text{
@@ -321,10 +322,25 @@ a.wine-name-color{
   margin-left: 10px;
 }
 
-.good-comment{
-  width: 100px;
-  height: 50px;
+.edit-destroy{
+  font-size: 14px;
+  display: flex; 
+  position: absolute;
+  top: 170px;
+  left: 800px;
+}
+.edit-link {
+  color: #757575;
+  margin-right: 10px;
+}
 
+.delete-link {
+  color: #757575;
+  margin-right: 10px;
+}
+
+.edit-link:hover, .delete-link:hover {
+  color: black;
 }
 
 
