@@ -256,7 +256,6 @@ main {
 
 .review-top{
   border-bottom:black;
-  border-bottom: 2px solid #CCC;
   display: flex;
   font-size: 20px;
   font-weight: bold;
