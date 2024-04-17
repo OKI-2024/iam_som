@@ -6,9 +6,12 @@
       <div class="registration_date">
          <%= @user.created_at.strftime("%Y.%m.%d") %> 登録
       </div>
+       <% if user_signed_in? && @user == current_user %>
       <div class="user-edit">
         <%= link_to(image_tag("haguruma.png", alt: "設定", class: "haguruma-icon"), edit_user_path(current_user)) %>設定
       </div>
+      <% end %>
+
     </div>
     <div class="user-show-middle">
       <div class="user-show-middle-left">
