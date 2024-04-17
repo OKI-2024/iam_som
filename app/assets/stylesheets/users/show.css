@@ -1,0 +1,116 @@
+.user-show-main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F3F3F3;
+  padding: 80px 0;
+  
+
+}
+.user-show-container{
+  background-color: white;
+  width: 1200px;
+  height: 500px;
+  margin: 10px 0;
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  padding: 50px;
+
+}
+.user-show-upper{
+  display: flex;
+  justify-content: space-between;
+}
+.registration_date{
+  color: #888888;
+}
+.user-edit{
+  color: #888888;
+}
+.haguruma-icon{
+  width: 50px;
+  height: 50px;
+}
+.user-show-middle{
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-show-middle-left{
+  display: flex;
+  position: relative;
+
+}
+.user-icon{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.user-nickname{
+  position: absolute;
+  top: 50px;
+  left: 180px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.user-show-middle-right{
+  position: relative;
+}
+
+.user-show-middle-right-container{
+  background-color: #663333;
+  border-radius: 20px;
+  height: 100px;
+  width: 370px;
+  position: absolute;
+  top: 40px;
+  right: 120px;
+  color: white;
+  padding: 20px;
+}
+
+.middle-right-container-upper{
+  font-weight: bold;
+}
+.middle-right-container-bottom{
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+
+.middle-right-container-bottom li {
+  margin-right: 20px; /* 右に20pxの間隔を設定 */
+}
+
+
+.user-show-bottom{
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-between;
+}
+
+.user-show-bottom-left-container{
+  width: 500px;
+  height: 150px;
+  padding: 20px;
+  border-top:#BEBEBE solid 1px;
+  font-weight: bold;
+}
+
+.user-show-bottom-right-container{
+  width: 500px;
+  height: 150px;
+  padding: 20px;
+  border-top:#BEBEBE solid 1px;
+  font-weight: bold;
+}
+
+.user-show-bottom h4{
+  padding-top: 20px;
+  font-size: 15px;
+}
+
+
