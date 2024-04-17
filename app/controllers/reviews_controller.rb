@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+before_action :authenticate_user!, only: [:new, :create]  
 
 def index
   @reviews = Review.order(created_at: :desc).limit(3)
