@@ -21,7 +21,7 @@
 }
 
 .search-result-index {
-  width: calc(20% - 30px); /* 1行に5つ表示するための計算（余白を考慮） */
+  width: calc(25% - 30px);
   border: 1px solid #ccc;
   padding: 10px;
   margin: 15px; /* 上下左右のマージン */
@@ -34,7 +34,7 @@
 }
 
 .wine-information {
-  height: 120px;  /* 適切な高さに設定 */
+  height: 140px;  /* 適切な高さに設定 */
   overflow: hidden;  /* 内容が高さを超えた場合に非表示にする */
   padding: 5px; /* 内容と境界の間にスペースを設ける */
 }
@@ -42,13 +42,13 @@
 .wine-information h3 {
   margin-top: 0;
   margin-bottom: 10px; /* 各項目間の隙間を設定 */
-  font-size: 16px; /* フォントサイズの調整 */
+  font-size: 14px; /* フォントサイズの調整 */
   color: #333; /* フォントカラー */
 }
 .wine-image-index {
   width: 100%;
   height: auto; /* 画像の元のアスペクト比を保持 */
-  margin-bottom: 10px; /* 画像とテキストの間にマージン */
+ 
 }
 
 .details-link {
@@ -64,6 +64,6 @@
 }
 
 .details-link:hover {
-  background-color: #0056b3;
+  background-color: #522D27;
 }
 

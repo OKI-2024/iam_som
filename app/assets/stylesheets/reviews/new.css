@@ -1,147 +1,180 @@
-.review-new-main{
-  width: 100vw;
-  height: 100vh;
-  background-color: #F3F3F3;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+/* Container Styles */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.review-invitation{
-  font-size: 30px;
+/* Title Styles */
+.title {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
   font-weight: bold;
-  color: #663333;
+}
+
+/* Wine Information Styles */
+.wine-info p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Form Group Styles */
+.form-control{
+  width: 250px;        /* 全幅を使う */
+  padding: 8px 12px;  /* パディングを調整 */
+  border: 1px solid #ccc; /* 境界線のスタイル */
+  border-radius: 4px; /* 角を丸く */
+}
+
+.form-row {
+  display: flex;
+  justify-content: start;
+  gap: 20px; /* アイテム間のスペース */
+}
+.form-group {
+  padding: 0 10px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Image Upload Styles */
+.image-upload-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.image-upload-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.image-upload-group input[type="file"] {
+  flex-grow: 1;
+}
+
+.image-upload-group img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Modal Styles */
+.modal-title {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Fragrance Selection Styles */
+.fragrance-category {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.fragrance-category h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.fragrance-items-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
   margin-bottom: 20px;
 }
 
-.review-format{
-  width: 80%;
-  height: 80%;
-  background-color: white;
-  border-radius: 30px;
+.fragrance-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  color: #444444;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  margin-bottom: 5px;
+  flex-direction: row;
 }
 
-
-
-.review-format-upper{
-  height: 15%;
-  width: 90%;
-  border-bottom:black;
-  border-bottom: 2px solid #CCC;
-  font-weight: bold;
-}
-
-.date-field{
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.name-field{
-  border-radius: 5px;
-  border-color: #ccc;
-}
-
-
-.review-format-middle{
-  height: 70%;
-  width: 90%;
-  border-bottom:black;
-  border-bottom: 2px solid #CCC;
-  font-weight: bold;
-}
-
-.review-format-middle-first{
-  height: 13%;
+.fragrance-item label {
   display: flex;
-  
+  align-items: center;
+  margin: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-grow: 1;
+  justify-content: flex-start;
 }
 
-.wine-bar-field{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.type-field{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.grape-variety-field{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
+.fragrance-item input[type="checkbox"] {
+  margin-right: 10px;
 }
 
-
-.review-format-middle-second{
-  height: 13%;
-  display: flex;
- 
+/* Button Styles */
+.submit-btn,
+.fragrance-select-btn {
+  padding: 10px;
+  background-color: #663333; /* Submit button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
 }
 
-.producer-variety{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
+.fragrance-select-btn {
+  background-color: #34495E; /* Deep navy blue */
+  font-size: 14px;
+  width: 30%;
 }
 
-.region-field{
-  width: 250px;
-  border-radius: 5px;
-  border-color: #ccc;
+.close {
+  cursor: pointer;
 }
 
-
-
-.review-format-middle-third{
-  height: 14%;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.review-format-middle-forth{
-  height: 30%;
-  border-radius: 5px;
-  border-color: #ccc;
+/* Attributes Container Styles */
+.attributes-container {
   display: flex;
   flex-wrap: wrap;
-}
-.fragrance-checkboxes{
-  margin-right: 20px
+  justify-content: space-between;
 }
 
-
-.review-format-middle-fifth{
-  height: 40%;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-.content-variety{
-  width: 90%;
-  height: 60%;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-
-
-.review-format-bottom{
-  height: 15%;
-  width: 90%;
+.attribute-row {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.review-btn{
-  background-color: #666633;
-  color: white;
-  font-weight: bold;
-  font-size: 25px;
-  border: none;
-  width: 60%;
-  border-radius: 40px;
-  margin: 5px 0;
+.attribute-label {
+  margin-bottom: 10px;
+}
+
+.radio-options {
+  display: flex;
+  align-items: center;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
 }

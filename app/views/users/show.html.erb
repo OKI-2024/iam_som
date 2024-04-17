@@ -1,9 +1,48 @@
 <%= render "shared/header" %>
-<P>ユーザー情報変更</P>
-<P>投稿の編集</P>
-<P>投稿の削除</P>
-<P>総レビュー数</P>
-<P>評価…etc</P>
+
+<div class="user-show-main">
+  <div class="user-show-container">
+    <div class="user-show-upper">
+      <div class="registration_date">
+         <%= @user.created_at.strftime("%Y.%m.%d") %> 登録
+      </div>
+      <div class="user-edit">
+        <%= link_to(image_tag("haguruma.png", alt: "設定", class: "haguruma-icon"), edit_user_path(current_user)) %>設定
+      </div>
+    </div>
+    <div class="user-show-middle">
+      <div class="user-show-middle-left">
+        <div><%= image_tag @user.avatar, alt: "アイコン", class: "user-icon" %></div>
+        <div class="user-nickname"><%= @user.nickname%></div>
+      </div>
+      <div class="user-show-middle-right">
+        <div class="user-show-middle-right-container">
+          <div class="middle-right-container-upper">
+             ワ活
+          </div>
+          <ul class="middle-right-container-bottom">
+            <li>総レビュー : <%= @reviews.count %> 件</li>
+            <li>総ワイン登録 : 0 件</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="user-show-bottom">
+      <div class="user-show-bottom-left-container">
+        自己紹介
+        <h4><%= @user.introduction%></h4>
+      </div>
+      <div class="user-show-bottom-right-container">
+        お気に入りのワイン
+        <h4>お気に入り機能実装後</h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
 
 <%= render "shared/review_index"%>
 <%= render "shared/footer" %>

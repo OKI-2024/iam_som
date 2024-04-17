@@ -1,78 +1,102 @@
 <%= render "shared/header" %>
 
-<div class="review-new-main">
-  <div class="review-invitation">ワインのレビューを投稿しよう</div>
-  <div class="review-format">
-  <div class="review-format-upper">
-     <%= form_with model: @wine_review_form, url:  wine_reviews_path, local: true do |form| %>
-        
-      <ul>
-        <li><strong>ワイン名:</strong> <%= @wine.name %></li>
-        <li><strong>種類:</strong> <%= @wine.type.name %></li>
-        <li><strong>生産地:</strong> <%= @wine.region.name %></li>
-        <li><strong>生産者:</strong> <%= @wine.producer %></li>
-      </ul>
-        
-        
-          
-  </div>
-
-  <div class="review-format-middle">
-    <div class="review-format-middle-first">
-          <%= form.label :wine_date, "日付", class: "date-label" %>
-          <%= form.text_field :wine_date, id: "wine_date", class: "date-field" %>
-
-          <%= form.label :wine_bar, "お店", class: "bar-label" %>
-          <%= form.text_field :wine_bar, id: "wine_bar", class: "wine-bar-field" %>
-      
-          
-
-          <%= form.label :image, "写真", class: "image-label" %>
-          <%= form.file_field :image, id: "image" %>
-    </div>
-    <div class="review-format-middle-second">
-          
-          
-
-    </div>
-   <div class="review-format-middle-third">
-  <% Review.wine_attributes.each do |attribute| %>
+<div class="container">
+    <h1 class="title">ワインのレビューを投稿しよう</h1>
     
-    <% label_text = case attribute %>
-      <% when :sweetness then "甘み" %>
-      <% when :bitterness then "渋み" %>
-      <% when :acidity then "酸味" %>
-      <% when :alcohol then "アルコール" %>
-      <% else "" %>
-    <% end %>
-    <label><%= label_text %></label>
+    <%= form_with model: @wine_review_form, url: wine_reviews_path, local: true, html: { class: "review-form" } do |form| %>
+        <div class="wine-info">
+            <p><strong>ワイン名:</strong> <%= @wine.name %></p>
+            <p><strong>種類:</strong> <%= @wine.type.name %></p>
+            <p><strong>生産地:</strong> <%= @wine.region.name %></p>
+            <p><strong>生産者:</strong> <%= @wine.producer %></p>
+        </div>
 
-    <% WineAttribute.all.each do |option| %>
-      <% radio_id = "#{attribute}_#{option.id}" %>
-      <%= form.radio_button attribute, option.id, id: radio_id %>
-      <label for="<%= radio_id %>"><%= option.name %></label>
-    <% end %>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <%= form.label :wine_date, "日付" %>
+                <%= form.date_field :wine_date, id: "wine_date", class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= form.label :wine_bar, "お店" %>
+                <%= form.text_field :wine_bar, id: "wine_bar", class: "form-control"  %>
+            </div>
+        </div>
+        <div class="form-group image-upload-group">
+            <%= form.label :image, "写真" %>
+            <div class="image-upload-container">
+                <%= form.file_field :image, id: "image" %>
+                <img id="preview" src="" alt="Image preview" style="display: none; width: 200px; height: 200px;">
+            </div>
+        </div>
 
-  <% end %>
-</div>
-    <div class="review-format-middle-forth">
-      <% Fragrance.all.each do |fragrance| %>
-  <div class="fragrance-checkboxes">
-    <%= check_box_tag "fragrance_ids[]", fragrance.id, false, id: "fragrance_#{fragrance.id}" %>
-    <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
-  </div>
-<% end %>   
-    </div>
-    <div class="review-format-middle-fifth">
-      <%= form.label :content, "感想", class: "content-label" %>
-<%= form.text_area :content, id: "content", class: "content-variety", placeholder: "感想（風味や香り、お店、料理など）例）三軒茶屋のララムリでソラマメのフリットと一緒にたべたよ＾＾", rows: "7", maxlength: "1000" %>
-    </div>
-  </div>
-  <div class="review-format-bottom">
-    <%= form.submit "投稿する", class: "review-btn" %>
-  </div>
-  <% end %>
-  </div>
+
+        <div class="attributes-container">
+            <% grouped_attributes = Review.wine_attributes.each_slice(2).to_a %>
+            <% grouped_attributes.each do |attribute_pair| %>
+                <div class="attribute-row">
+                    <% attribute_pair.each do |attribute| %>
+                        <div class="form-group">
+                            <% label_text = { sweetness: "甘み", bitterness: "渋み", acidity: "酸味", alcohol: "アルコール" }[attribute] %>
+                            <%= form.label attribute, label_text, class: "attribute-label" %>
+                            <div class="radio-options">
+                                <% WineAttribute.all.each do |option| %>
+                                    <label class="radio-label">
+                                        <%= form.radio_button attribute, option.id, id: "#{attribute}_#{option.id}" %>
+                                        <%= option.name %>
+                                    </label>
+                                <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="btn fragrance-select-btn" data-bs-toggle="modal" data-bs-target="#fragranceModal">
+                香りを選択
+            </button>
+            <!-- モーダルウィンドウ -->
+            <div class="modal fade" id="fragranceModal" tabindex="-1" aria-labelledby="fragranceModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="fragranceModalLabel">香りの選択</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <% Fragrance.all.group_by(&:category).each do |category, fragrances| %>
+                                <div class="fragrance-category">
+                                    <h4><%= category %></h4>
+                                    <div class="fragrance-items-container">
+                                      <% fragrances.each do |fragrance| %>
+                                          <div class="fragrance-item">
+                                              <%= check_box_tag "fragrance_ids[]", fragrance.id, false, id: "fragrance_#{fragrance.id}" %>
+                                              <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
+                                          </div>
+                                      <% end %>
+                                  </div>
+                                </div>
+                            <% end %>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= form.label :content, "その他感想など" %>
+            <%= form.text_area :content, id: "content", placeholder: "風味や香り、お店、料理など", rows: "4", maxlength: "1000" %>
+        </div>
+
+        <div class="form-actions">
+            <%= form.submit "投稿する", class: "btn submit-btn" %>
+        </div>
+    <% end %>
 </div>
 
 <%= render "shared/footer" %>
