@@ -20,7 +20,8 @@ a:hover {
   justify-content: space-between;
   font-size: 20px;
   padding-top: 20px;
-  font-weight: bold;  
+  font-weight: bold;
+  
 }
 .nav-left {
   display: flex;

@@ -11,19 +11,25 @@
             <p><strong>生産者:</strong> <%= @wine.producer %></p>
         </div>
 
-        <div class="form-group">
-            <%= form.label :wine_date, "日付" %>
-            <%= form.text_field :wine_date, id: "wine_date" %>
-            <%= form.label :wine_bar, "お店" %>
-            <%= form.text_field :wine_bar, id: "wine_bar" %>
-            <div class="form-group image-upload-group">
-                <%= form.label :image, "写真" %>
-                <div class="image-upload-container">
-                    <%= form.file_field :image, id: "image" %>
-                    <img id="preview" src="" alt="Image preview" style="display: none; width: 200px; height: 200px;">
-                </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <%= form.label :wine_date, "日付" %>
+                <%= form.date_field :wine_date, id: "wine_date", class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= form.label :wine_bar, "お店" %>
+                <%= form.text_field :wine_bar, id: "wine_bar", class: "form-control"  %>
             </div>
         </div>
+        <div class="form-group image-upload-group">
+            <%= form.label :image, "写真" %>
+            <div class="image-upload-container">
+                <%= form.file_field :image, id: "image" %>
+                <img id="preview" src="" alt="Image preview" style="display: none; width: 200px; height: 200px;">
+            </div>
+        </div>
+
 
         <div class="attributes-container">
             <% grouped_attributes = Review.wine_attributes.each_slice(2).to_a %>

@@ -24,12 +24,22 @@
 }
 
 /* Form Group Styles */
-.form-group {
+.form-control{
+  width: 250px;        /* 全幅を使う */
+  padding: 8px 12px;  /* パディングを調整 */
+  border: 1px solid #ccc; /* 境界線のスタイル */
+  border-radius: 4px; /* 角を丸く */
+}
+
+.form-row {
   display: flex;
-  flex-direction: column;
-  flex: 1 1 45%;
+  justify-content: start;
+  gap: 20px; /* アイテム間のスペース */
+}
+.form-group {
   padding: 0 10px;
   margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .form-group label {
