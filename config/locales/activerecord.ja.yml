@@ -1,0 +1,30 @@
+ja:
+  errors:
+    messages:
+      not_saved:
+        one: "このレコードは保存できませんでした。1つのエラーがあります。"
+        other: "このレコードは保存できませんでした。%{count}個のエラーがあります。"
+
+  activerecord:
+    attributes:
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
+        nickname: "ニックネーム"
+        introduction: "自己紹介"
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "を入力してください"
+              taken: "は既に存在しています"
+            password:
+              blank: "を入力してください"
+            nickname:
+              blank: "を入力してください"
+              taken: "は既に使用されています"
+              too_long: "は最大%{count}文字までです"
+            introduction:
+              too_long: "は最大%{count}文字までです"

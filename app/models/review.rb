@@ -7,9 +7,6 @@ class Review < ApplicationRecord
 
 
 
-  validates_presence_of :sweetness, :bitterness, :acidity, :alcohol
-  
-
   def self.wine_attributes
     %i[sweetness bitterness acidity alcohol]
   end
