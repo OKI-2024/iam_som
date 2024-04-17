@@ -14,10 +14,21 @@
 
     </div>
     <div class="user-show-middle">
+
       <div class="user-show-middle-left">
-        <div><%= image_tag @user.avatar, alt: "アイコン", class: "user-icon" %></div>
-        <div class="user-nickname"><%= @user.nickname%></div>
+        <% if @user.avatar.attached? %>
+          <%= link_to user_path(@user) do %>
+            <%= image_tag @user.avatar, alt: "アイコン", class: "user-icon" %>
+          <% end %>
+        <% else %>
+          <%= link_to user_path(@user) do %>
+            <%= image_tag 'wa.png', alt: "デフォルトアイコン", class: "user-icon" %>
+          <% end %>
+        <% end %>
+        <div class="user-nickname"><%= @user.nickname %></div>
       </div>
+
+
       <div class="user-show-middle-right">
         <div class="user-show-middle-right-container">
           <div class="middle-right-container-upper">

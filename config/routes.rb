@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get 'search'
       get 'autocomplete'
     end
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :edit, :update]
   end
   resources :reviews, only: [:index, :destroy]
   resources :users, only: [:edit, :update, :show]
