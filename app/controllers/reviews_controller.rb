@@ -20,7 +20,7 @@ def create
   @review.fragrances = Fragrance.find(selected_fragrances)
 
   if @review.save
-    redirect_to @wine, notice: 'レビューが正常に投稿されました。'
+    redirect_to @wine
   else
     render :new
   end
@@ -39,7 +39,7 @@ def update
     selected_fragrances = params[:review][:fragrances][:fragrance_ids].map(&:to_i)
     @review.fragrances = Fragrance.find(selected_fragrances)
 
-    redirect_to wine_path(@wine), notice: 'レビューが正常に更新されました。'
+    redirect_to wine_path(@wine)
   else
     render :edit
   end
@@ -53,7 +53,7 @@ end
 def destroy
   @review = Review.find(params[:id])
   @review.destroy
-  redirect_to wine_path(@review.wine), notice: 'レビューが削除されました。'
+  redirect_to user_path(current_user)
 end
 
 private
