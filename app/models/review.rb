@@ -8,7 +8,7 @@ class Review < ApplicationRecord
   
 
   def self.wine_attributes
-    %i[sweetness bitterness acidity alcohol]
+    [:sweetness, :bitterness, :acidity, :alcohol]
   end
   
 end

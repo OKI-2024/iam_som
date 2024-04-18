@@ -6,7 +6,7 @@ class User < ApplicationRecord
        has_many :reviews
        has_one_attached :avatar
        
-       # ニックネームのバリデーション
+       
        validates :nickname, presence: true,
                             length: { maximum: 10 },
                             uniqueness: true
