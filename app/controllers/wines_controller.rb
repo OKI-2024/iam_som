@@ -44,9 +44,10 @@ class WinesController < ApplicationController
   def autocomplete
     term = params[:term].downcase
     wines = Wine.where("LOWER(name) LIKE :term OR LOWER(producer) LIKE :term", term: "%#{term}%").select(:name, :producer).distinct
-    names = wines.map { |wine| { label: wine.name, value: wine.name } }
-    producers = wines.map { |wine| { label: wine.producer, value: wine.producer } }.uniq
+    names = wines.map { |wine| { label: "ワイン名: #{wine.name}", value: wine.name } }
+    producers = wines.map { |wine| { label: "生産者名: #{wine.producer}", value: wine.producer } }.uniq
     result = names + producers
     render json: result.uniq { |item| item[:value] }
   end
+  
 end
