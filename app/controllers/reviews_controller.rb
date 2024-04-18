@@ -15,9 +15,9 @@ def create
   @review = @wine.reviews.build(review_params.except(:fragrances))
   @review.user = current_user
 
-  # 指定されたfragrance_idsに基づいてFragranceReviewの関連を設定
-  selected_fragrances = params[:review][:fragrances][:fragrance_ids].map(&:to_i)
-  @review.fragrances = Fragrance.find(selected_fragrances)
+  # 安全にfragrance_idsを取得し、Fragranceオブジェクトを設定
+  fragrance_ids = Array.wrap(params[:review].dig(:fragrances, :fragrance_ids)).map(&:to_i)
+  @review.fragrances = Fragrance.where(id: fragrance_ids)
 
   if @review.save
     redirect_to @wine
@@ -33,17 +33,17 @@ end
 def update
   @review = Review.find(params[:id])
 
-  # レビュー情報の更新
   if @review.update(review_params.except(:fragrances))
-    # 指定されたfragrance_idsに基づいてFragranceReviewの関連を更新
-    selected_fragrances = params[:review][:fragrances][:fragrance_ids].map(&:to_i)
-    @review.fragrances = Fragrance.find(selected_fragrances)
+    # 安全にfragrance_idsを取得し、Fragranceオブジェクトを設定
+    fragrance_ids = Array.wrap(params[:review].dig(:fragrances, :fragrance_ids)).map(&:to_i)
+    @review.fragrances = Fragrance.where(id: fragrance_ids)
 
     redirect_to wine_path(@wine)
   else
     render :edit
   end
 end
+
 def show
 
   @review = Review.find(params[:id])

@@ -1,0 +1,62 @@
+=> [32m#<ActiveRecord::ConnectionAdapters::ConnectionPool:0x00007f608314e250[0m
+ @async_executor[32m=[0m[1;36mnil[0m,
+ @automatic_reconnect[32m=[0m[1;36mtrue[0m,
+ @available[32m=[0m
+  [32m#<ActiveRecord::ConnectionAdapters::ConnectionPool::ConnectionLeasingQueue:0x00007f60831ae790[0m
+   @cond[32m=[0m
+    [32m#<MonitorMixin::ConditionVariable:0x00007f608d683568[0m
+     @cond[32m=[0m[32m#<Thread::ConditionVariable:0x00007f608d683540[0m[32m>[0m,
+     @monitor[32m=[0m[32m#<Monitor:0x00007f608d6842d8[0m[32m>[0m[32m>[0m,
+   @lock[32m=[0m[32m#<ActiveRecord::ConnectionAdapters::ConnectionPool:0x00007f608314e250[0m ...[32m>[0m,
+   @num_waiting[32m=[0m[1;34m0[0m,
+   @queue[32m=[0m[][32m>[0m,
+ @checkout_timeout[32m=[0m[1;35m5.0[0m,
+ @connection_class[32m=[0m[1;34;4mActiveRecord[0m::[1;34;4mBase[0m,
+ @connections[32m=[0m[],
+ @db_config[32m=[0m
+  [32m#<ActiveRecord::DatabaseConfigurations::HashConfig:0x00007f60834f15b0[0m
+   @configuration_hash[32m=[0m
+    {[33m:adapter[0m=>[31m[1;31m"[0m[31mmysql2[1;31m"[0m[31m[0m,
+     [33m:encoding[0m=>[31m[1;31m"[0m[31mutf8[1;31m"[0m[31m[0m,
+     [33m:pool[0m=>[1;34m5[0m,
+     [33m:username[0m=>[31m[1;31m"[0m[31mroot[1;31m"[0m[31m[0m,
+     [33m:password[0m=>[1;36mnil[0m,
+     [33m:socket[0m=>[31m[1;31m"[0m[31m/tmp/mysql.sock[1;31m"[0m[31m[0m,
+     [33m:database[0m=>[31m[1;31m"[0m[31miam_som_test[1;31m"[0m[31m[0m},
+   @env_name[32m=[0m[31m[1;31m"[0m[31mtest[1;31m"[0m[31m[0m,
+   @name[32m=[0m[31m[1;31m"[0m[31mprimary[1;31m"[0m[31m[0m[32m>[0m,
+ @idle_timeout[32m=[0m[1;35m300.0[0m,
+ @lock_thread[32m=[0m[1;36mfalse[0m,
+ @mon_data[32m=[0m[32m#<Monitor:0x00007f608d6842d8[0m[32m>[0m,
+ @mon_data_owner_object_id[32m=[0m[1;34m17880[0m,
+ @now_connecting[32m=[0m[1;34m0[0m,
+ @pool_config[32m=[0m
+  [32m#<ActiveRecord::ConnectionAdapters::PoolConfig:0x00007f60831af780[0m
+   @_mutex[32m=[0m[32m#<Thread::Mutex:0x00007f608d687af0[0m[32m>[0m,
+   @connection_class[32m=[0m[1;34;4mActiveRecord[0m::[1;34;4mBase[0m,
+   @db_config[32m=[0m
+    [32m#<ActiveRecord::DatabaseConfigurations::HashConfig:0x00007f60834f15b0[0m
+     @configuration_hash[32m=[0m
+      {[33m:adapter[0m=>[31m[1;31m"[0m[31mmysql2[1;31m"[0m[31m[0m,
+       [33m:encoding[0m=>[31m[1;31m"[0m[31mutf8[1;31m"[0m[31m[0m,
+       [33m:pool[0m=>[1;34m5[0m,
+       [33m:username[0m=>[31m[1;31m"[0m[31mroot[1;31m"[0m[31m[0m,
+       [33m:password[0m=>[1;36mnil[0m,
+       [33m:socket[0m=>[31m[1;31m"[0m[31m/tmp/mysql.sock[1;31m"[0m[31m[0m,
+       [33m:database[0m=>[31m[1;31m"[0m[31miam_som_test[1;31m"[0m[31m[0m},
+     @env_name[32m=[0m[31m[1;31m"[0m[31mtest[1;31m"[0m[31m[0m,
+     @name[32m=[0m[31m[1;31m"[0m[31mprimary[1;31m"[0m[31m[0m[32m>[0m,
+   @pool[32m=[0m[32m#<ActiveRecord::ConnectionAdapters::ConnectionPool:0x00007f608314e250[0m ...[32m>[0m,
+   @role[32m=[0m[33m:writing[0m,
+   @shard[32m=[0m[33m:default[0m[32m>[0m,
+ @query_cache_enabled[32m=[0m
+  [32m#<Concurrent::Map:0x00007f608d684148 entries=0 default_proc=#<Proc:0x00007f608d6840a8 /home/oki/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.8.1/lib/active_record/connection_adapters/abstract/query_cache.rb:32>>[0m,
+ @reaper[32m=[0m
+  [32m#<ActiveRecord::ConnectionAdapters::ConnectionPool::Reaper:0x00007f608d6831a8[0m
+   @frequency[32m=[0m[1;35m60.0[0m,
+   @pool[32m=[0m[32m#<ActiveRecord::ConnectionAdapters::ConnectionPool:0x00007f608314e250[0m ...[32m>[0m[32m>[0m,
+ @role[32m=[0m[33m:writing[0m,
+ @shard[32m=[0m[33m:default[0m,
+ @size[32m=[0m[1;34m5[0m,
+ @thread_cached_conns[32m=[0m[32m#<Concurrent::Map:0x00007f608d683a18 entries=0 default_proc=nil>[0m,
+ @threads_blocking_new_connections[32m=[0m[1;34m0[0m[32m>[0m

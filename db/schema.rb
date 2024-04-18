@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_16_084831) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
-    t.text "introduction", null: false
+    t.text "introduction"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -86,7 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_16_084831) do
   end
 
   create_table "wines", charset: "utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "producer"
     t.integer "type_id"
     t.integer "grape_variety_id"

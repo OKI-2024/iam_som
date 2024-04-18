@@ -2,16 +2,30 @@ ja:
   errors:
     messages:
       not_saved:
-        one: "このレコードは保存できませんでした。1つのエラーがあります。"
-        other: "このレコードは保存できませんでした。%{count}個のエラーがあります。"
+        one: "保存できませんでした。1つのエラーがあります。"
+        other: "保存できませんでした。%{count}個のエラーがあります。"
+      required: "を入力してください"
 
   activerecord:
+    models:
+      user: "ユーザー"
+      wine: "ワイン"
+      review: "レビュー"
+
     attributes:
       user:
         email: "メールアドレス"
         password: "パスワード"
         nickname: "ニックネーム"
         introduction: "自己紹介"
+      wine:
+        name: "ワイン名"
+        image: "画像"
+        grape_variety_id: "ブドウの品種"
+        type_id: "ワインのタイプ"
+        region_id: "生産地"
+      review:
+        content: "感想"
 
     errors:
       models:
@@ -28,21 +42,8 @@ ja:
               too_long: "は最大%{count}文字までです"
             introduction:
               too_long: "は最大%{count}文字までです"
-
-
-ja:
-  activerecord:
-    models:
-      wine: "ワイン"
-    attributes:
-      wine:
-        name: "ワイン名"
-        image: "画像"
-        grape_variety_id: "ブドウの品種"
-        type_id: "ワインのタイプ"
-        region_id: "生産地"
-    errors:
-      models:
+            base:
+              required: "を入力してください"
         wine:
           attributes:
             name:
@@ -55,3 +56,9 @@ ja:
               other_than: "ワインのタイプを選択してください"
             region_id:
               other_than: "ワインの生産地を選択してください"
+            base:
+              required: "を入力してください"
+        review:
+          attributes:
+            content:
+              too_long: "感想は240字以内で入力してください"
