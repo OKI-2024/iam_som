@@ -11,9 +11,14 @@ def new
 end
 
 def create
-  binding.pry
-  @review = @wine.reviews.build(review_params)
+  @wine = Wine.find(params[:wine_id])
+  @review = @wine.reviews.build(review_params.except(:fragrances))
   @review.user = current_user
+
+  # 指定されたfragrance_idsに基づいてFragranceReviewの関連を設定
+  selected_fragrances = params[:review][:fragrances][:fragrance_ids].map(&:to_i)
+  @review.fragrances = Fragrance.find(selected_fragrances)
+
   if @review.save
     redirect_to @wine, notice: 'レビューが正常に投稿されました。'
   else
@@ -27,13 +32,18 @@ end
 
 def update
   @review = Review.find(params[:id])
-  if @review.update(review_params)
+
+  # レビュー情報の更新
+  if @review.update(review_params.except(:fragrances))
+    # 指定されたfragrance_idsに基づいてFragranceReviewの関連を更新
+    selected_fragrances = params[:review][:fragrances][:fragrance_ids].map(&:to_i)
+    @review.fragrances = Fragrance.find(selected_fragrances)
+
     redirect_to wine_path(@wine), notice: 'レビューが正常に更新されました。'
   else
     render :edit
   end
 end
-
 def show
 
   @review = Review.find(params[:id])
@@ -50,7 +60,7 @@ private
 
 def review_params
   params.require(:review).permit(
-    :wine_date, :wine_bar, :image, :sweetness, :bitterness, :acidity, :alcohol, :content, fragrance_ids: []).merge(user: current_user)
+    :wine_date, :wine_bar, :image, :sweetness, :bitterness, :acidity, :alcohol, :content, fragrances: [fragrance_ids: []]).merge(user: current_user)
 end
 
 def set_wine

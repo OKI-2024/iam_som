@@ -68,18 +68,18 @@
                         <div class="modal-body">
                             <% Fragrance.all.group_by(&:category).each do |category, fragrances| %>
                                 <div class="fragrance-category">
-                                    <h4><%= category %></h4>
-                                    <div class="fragrance-items-container">
-                                      <% fragrances.each do |fragrance| %>
-                                          <div class="fragrance-item">
-                                              <%= check_box_tag "fragrance_ids[]", fragrance.id, false, id: "fragrance_#{fragrance.id}" %>
-                                              <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
-                                          </div>
-                                      <% end %>
-                                  </div>
+                                <h4><%= category %></h4>
+                                <div class="fragrance-items-container">
+                                    <% fragrances.each do |fragrance| %>
+                                    <div class="fragrance-item">
+                                        <%= check_box_tag "review[fragrances][fragrance_ids][]", fragrance.id, @review.fragrances.include?(fragrance), id: "fragrance_#{fragrance.id}" %>
+                                        <%= label_tag "fragrance_#{fragrance.id}", fragrance.name %>
+                                    </div>
+                                    <% end %>
+                                </div>
                                 </div>
                             <% end %>
-                        </div>
+                            </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
                         </div>
