@@ -28,3 +28,30 @@ ja:
               too_long: "は最大%{count}文字までです"
             introduction:
               too_long: "は最大%{count}文字までです"
+
+
+ja:
+  activerecord:
+    models:
+      wine: "ワイン"
+    attributes:
+      wine:
+        name: "ワイン名"
+        image: "画像"
+        grape_variety_id: "ブドウの品種"
+        type_id: "ワインのタイプ"
+        region_id: "生産地"
+    errors:
+      models:
+        wine:
+          attributes:
+            name:
+              blank: "ワイン名は必須です"
+            image:
+              blank: "画像は必須です"
+            grape_variety_id:
+              other_than: "ブドウの品種を選択してください"
+            type_id:
+              other_than: "ワインのタイプを選択してください"
+            region_id:
+              other_than: "ワインの生産地を選択してください"
