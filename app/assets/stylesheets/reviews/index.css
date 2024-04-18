@@ -322,12 +322,12 @@ a.wine-name-color{
   margin-left: 10px;
 }
 
-.edit-destroy{
+.link-to-show{
   font-size: 14px;
   display: flex; 
   position: absolute;
   top: 170px;
-  left: 800px;
+  left: 840px;
 }
 .edit-link {
   color: #757575;
@@ -339,7 +339,13 @@ a.wine-name-color{
   margin-right: 10px;
 }
 
-.edit-link:hover, .delete-link:hover {
+.show-link {
+  color: #757575;
+  margin-right: 10px;
+}
+
+
+.edit-link:hover, .delete-link:hover, .show-link:hover {
   color: black;
 }
 

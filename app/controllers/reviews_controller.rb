@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_wine, only: [:new, :create, :edit, :update]
+  before_action :set_wine, only: [:new, :create, :edit, :update, :show]
 
 def index
   @reviews = Review.order(created_at: :desc).limit(5)
@@ -11,6 +11,7 @@ def new
 end
 
 def create
+  binding.pry
   @review = @wine.reviews.build(review_params)
   @review.user = current_user
   if @review.save
@@ -31,6 +32,11 @@ def update
   else
     render :edit
   end
+end
+
+def show
+
+  @review = Review.find(params[:id])
 end
 
 
