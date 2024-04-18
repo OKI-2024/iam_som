@@ -1,14 +1,18 @@
 <%= render "shared/header" %>
 
+
+<p>ワイン名: <%= @wine.name %></p>
+<p>種類: <%= @wine.type.name %></p>
+<p>生産地: <%= @wine.region.name %></p>
+<p>生産者: <%= @wine.producer %></p>
+
+
+
 <div class="container">
     <h1 class="title">ワインのレビューを投稿しよう</h1>
-    
     <%= form_with model: [@wine, @review], url: wine_review_path(@wine, @review), local: true, html: { class: "review-form" } do |form| %>
         <div class="wine-info">
-            <p><strong>ワイン名:</strong> <%= @wine.name %></p>
-            <p><strong>種類:</strong> <%= @wine.type.name %></p>
-            <p><strong>生産地:</strong> <%= @wine.region.name %></p>
-            <p><strong>生産者:</strong> <%= @wine.producer %></p>
+            
         </div>
 
         

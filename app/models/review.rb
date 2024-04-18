@@ -3,12 +3,14 @@ class Review < ApplicationRecord
   has_one_attached :image
   belongs_to :user
   belongs_to :wine
-  has_many :fragrance_reviews
+  has_many :fragrance_reviews, dependent: :destroy
   has_many :fragrances, through: :fragrance_reviews
+
+  validates :content, length: { maximum: 240 }
   
 
   def self.wine_attributes
-    %i[sweetness bitterness acidity alcohol]
+    [:sweetness, :bitterness, :acidity, :alcohol]
   end
   
 end
