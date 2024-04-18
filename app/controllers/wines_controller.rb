@@ -11,8 +11,11 @@ class WinesController < ApplicationController
   
     # 入力されたキーワードを処理
     if params[:keyword].present?
+      # 全角スペースを半角スペースに置換し、余分なスペースを削除
+      keyword_processed = params[:keyword].gsub(/[[:space:]]/, ' ').strip.gsub(/\s+/, ' ')
+      
       # 平仮名をカタカナに変換し、全角英数字を半角に変換
-      keyword_processed = Moji.hira_to_kata(params[:keyword])
+      keyword_processed = Moji.hira_to_kata(keyword_processed)
       keyword_processed = Moji.zen_to_han(keyword_processed, Moji::ZEN_ALNUM)  # 全角英数字を半角に
       @keywords = Moji.han_to_zen(keyword_processed, Moji::KANA)
     else
@@ -40,6 +43,8 @@ class WinesController < ApplicationController
   end
   
   
+  
+  
 
   def autocomplete
     term = params[:term].downcase
@@ -49,5 +54,5 @@ class WinesController < ApplicationController
     result = names + producers
     render json: result.uniq { |item| item[:value] }
   end
-  
+
 end
