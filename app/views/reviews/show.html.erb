@@ -1,0 +1,53 @@
+<%= render "shared/header" %>
+
+<div class="reviews-show">
+
+  <div class="review-show">     
+            
+            <div class="review-top">
+              <%= link_to(image_tag(@review.user.avatar, alt: @review.user.nickname, class: "avatar"), user_path(@review.user)) %>
+              <div class="user-name"><%= link_to @review.user.nickname, user_path(@review.user), class: "user-name-color" %></div>
+              <div class="wine-date"><%= @review.wine_date %></div>
+              <div class="wine-name">
+                <%= link_to "#{@review.wine.name} （ #{Region.find(@review.wine.region_id).name} ）", wine_path(@review.wine), class: "wine-name-color" %>
+              </div>
+            </div>
+
+            <div class="review-content">
+              
+              <div class="review-image">
+                <% if @review.image.attached? %>
+                  <%= link_to image_tag(@review.image, class: "review-image"), "#" %>
+                <% end %>
+              </div>
+              
+              <div class="review-text"><%= @review.content %>
+              <ul class="edit-destroy">
+              <% if user_signed_in? && @review.user == current_user %>  
+                <li><%= link_to "編集", edit_wine_review_path(wine_id: @review.wine_id, id: @review.id), class: "edit-link" %></li>
+                <li><%= link_to "削除", review_path(wine_id: @review.wine_id, id: @review.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "delete-link" %></li>
+              </ul>
+              <% end %>
+              </div>
+            </div>
+  
+             <div class="review-bottom">
+                <div class="review-fragrance">香りの評価 <%= @review.fragrances.map(&:name).join(', ') %></div>
+                <div class="review-four-elements">
+                  4要素の評価
+                  <ul>
+                    <% attribute_names = { sweetness: '甘味', bitterness: '苦味', acidity: '酸味', alcohol: 'アルコール度数' } %>
+                    <% Review.wine_attributes.each do |attribute| %>
+                      <li><%= attribute_names[attribute] %>: <%= @review.send(attribute) %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+                                
+  </div>
+      
+</div>
+
+
+<%= render "shared/footer" %>
