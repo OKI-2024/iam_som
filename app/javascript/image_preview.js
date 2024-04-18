@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const reader = new FileReader();
       reader.onload = function(e) {
         preview.src = e.target.result;
-        preview.style.display = 'inline-block'; // この行を変更
+        preview.style.display = 'inline-block';
       };
       reader.readAsDataURL(file);
     }
