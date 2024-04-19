@@ -88,3 +88,4 @@ gem 'nokogiri'
 gem 'byebug'
 gem 'ransack'
 gem 'moji'
+gem "aws-sdk-s3", require: false
