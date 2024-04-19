@@ -50,6 +50,8 @@ test:
 #
 production:
   <<: *default
+  adapter: mysql2
   database: iam_som_production
-  username: iam_som
-  password: <%= ENV["IAM_SOM_DATABASE_PASSWORD"] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock 
