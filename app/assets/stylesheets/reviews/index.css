@@ -88,7 +88,7 @@ main {
   width: 100vw;
   height: 900px; /* 変更 */
   background-color: #663333;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   display: flex;
@@ -115,7 +115,7 @@ main {
 
 .search-container-button {
   padding: 5px 10px;
-  background-color: #666633;
+  background-color: #34495E;
   color: #fff;
   border: none;
   border-radius: 0 20px 20px 0;
@@ -175,15 +175,15 @@ main {
   justify-content: center;
 }
 
-
+.description{}
 
 
 .logo {
-  margin-top: 30px;
+
 }
 .logo img {
-  width: 300px;
-  height: 300px;  
+  width: 350px;
+  height: 350px;  
 }
 .wine {
   height: 300px;
@@ -194,7 +194,7 @@ main {
 }
 .post-review-btn{
   width: 120px;
-  background: #666633;
+  background: #34495E;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
@@ -248,7 +248,7 @@ main {
   background-color: white;
   width: 900px;
   height: 300px;
-  margin: 10px 0;
+  margin: 20px 0;
   border-radius: 20px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
   
