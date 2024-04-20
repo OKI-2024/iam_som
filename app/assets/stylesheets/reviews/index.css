@@ -10,6 +10,7 @@ a {
 a:hover {
   color: white;
 }
+
 /* ヘッダー（始） */
 
 .navbar {
@@ -55,8 +56,7 @@ a:hover {
   padding: 4px;
   border-radius: 5px;
   margin-left: 15px;
-  background-color: white;
-  color: #663333;
+  color: white;
 }
 
 .sign-in{
@@ -75,6 +75,17 @@ a:hover {
 }
 
 
+.log-out:hover, .log-in:hover {
+  background-color: #D2D2D2;
+  color: #663333;
+}
+
+.sign-in:hover {
+  background-color: #521F1F;
+  color: white;
+}
+
+
 
 /* ヘッダー（終） */
 
@@ -83,6 +94,7 @@ a:hover {
 
 main {
   min-height: 100vh;
+  
 }
 
 .main-first {
@@ -95,7 +107,8 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  }
+  position: relative;
+}
 
 .search-container {
   display: flex;
@@ -103,6 +116,7 @@ main {
   width: 40%;
   height: 100px;
   margin: 20px 0 30px 0;
+  z-index: 1;
 }
 .search-container input[type="text"] {
   flex: 1;
@@ -135,6 +149,7 @@ main {
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
+  z-index: 1;
 }
 
 .modal-body{
@@ -205,6 +220,17 @@ main {
   object-fit: cover;
   margin-bottom: 30px;
 }
+.background-image {
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* 背景画像が最背面になるようにする */
+  background-size: cover; /* 画像が要素にフィットするように調整 */
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .post-review-btn{
   width: 120px;
   background: #34495E;
@@ -236,7 +262,7 @@ main {
   font-weight: bold;
   border: 3px solid white;
   background-color: #663333;
-
+  z-index: 1;
 }
 
 
