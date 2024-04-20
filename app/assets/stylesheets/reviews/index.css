@@ -314,21 +314,24 @@ main {
   align-items: center;
 }
 
+.date-name{
+  margin: 0 30px;
+}
+
 .user-name{
   flex-grow: 0;
   flex-shrink: 0;
-  margin-right: 20px;
-  margin-left: 20px;
+  font-size: 12px;
 }
 a.user-name-color{
-  color: #0066CC;
+  color: #757575;
 }
 
 .wine-date{
   flex-grow: 0;
   flex-shrink: 0;
-  margin-right: 20px;
   color: #757575;
+  font-size: 12px;
 }
 
 .wine-name{
