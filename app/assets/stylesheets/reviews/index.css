@@ -269,6 +269,19 @@ main {
 
 /* ロゴ＆検索画面（終） */
 
+/* 新着レビュー（始） */
+.new-reviews-area{
+  display: flex;
+  justify-content: center;
+  background-color: #F3F3F3;
+}
+.new-reviews{
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 15px;
+}
+/* 新着レビュー（終） */
+
 /* 投稿一覧（始） */
 .main-second {
   width: 100%;
