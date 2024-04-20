@@ -14,33 +14,28 @@ a:hover {
 
 .navbar {
   width: 100vw;
-  height: 70px;
+  height: auto;
   background-color: #663333;
   display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  padding-top: 20px;
+  font-size: 20px;  
+  padding: 10px 20px;
   font-weight: bold;
-  
 }
 .nav-left {
   display: flex;
-  
+  align-items: center;
 }
 .nav {
-  margin: 0 20px;
+  margin: 0 15px;
 }
 .nav-right {
-  width: 500px;
   display: flex;
-  justify-content: space-between;
-  padding-right: 50px;
-  
+  align-items: center;
 
 }
 
 .icon {
-  margin-right: 50px;
+ margin-left: 15px;
 }
 .icon img {
   width: 50px;
@@ -52,25 +47,31 @@ a:hover {
   width: 50px;
   height: 50px; 
   border-radius: 50%;
+  margin-left: 15px;
 
 }
 
 .log-out{
-  border: 3px solid white;
-  padding: 3px;
-  border-radius: 10px;
+  padding: 4px;
+  border-radius: 5px;
+  margin-left: 15px;
+  background-color: white;
+  color: #663333;
 }
 
 .sign-in{
-  border: 3px solid white;
-  padding: 3px;
-  border-radius: 10px;
+  padding: 4px;
+  border-radius: 5px;
+  margin-left: 15px;
+  background-color: white;
+  color: #663333;
 }
 
 .log-in{
-  border: 3px solid white;
-  padding: 3px;
-  border-radius: 10px;
+  padding: 4px;
+  border-radius: 5px;
+  margin-left: 15px;
+  color: white;
 }
 
 
@@ -86,7 +87,7 @@ main {
 
 .main-first {
   width: 100vw;
-  height: 900px; /* 変更 */
+  height: auto;
   background-color: #663333;
   font-size: 20px;
   font-weight: bold;
@@ -99,9 +100,9 @@ main {
 .search-container {
   display: flex;
   align-items: center;
-  width: 600px;
-  height: 200px;
-  margin-bottom: 30px;
+  width: 40%;
+  height: 100px;
+  margin: 20px 0 30px 0;
 }
 .search-container input[type="text"] {
   flex: 1;
@@ -109,8 +110,20 @@ main {
   outline: none;
   padding: 5px;
   border-radius: 20px 0 0 20px;
-  font-size: 20px;
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .search-container input[type="text"]::placeholder {
+    font-size: 14px; /* 画面幅に応じて適切なサイズを指定 */
+  }
+}
+
+/* 画面幅が 601px 以上の場合 */
+@media (min-width: 601px) {
+  .search-container input[type="text"]::placeholder {
+    font-size: 18px; /* 画面幅に応じて適切なサイズを指定 */
+  }
 }
 
 .search-container-button {
@@ -232,7 +245,7 @@ main {
 
 /* 投稿一覧（始） */
 .main-second {
-  width: 100vw;
+  width: 100%;
   background-color: #F3F3F3;
   display: flex;
   align-items: center;
@@ -242,12 +255,12 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  
+  justify-content: center; /* 中央に配置 */
 }
 .review{
   background-color: white;
-  width: 900px;
-  height: 300px;
+  width: 100%; /* 固定値から幅をパーセンテージに変更 */
+  max-width: 900px; /* 最大幅を設定 */
   margin: 20px 0;
   border-radius: 20px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
@@ -301,9 +314,8 @@ a.wine-name-color{
 
 .review-text{
   margin-left: 30px;
-  width: 80%;
-  border: 1px solid #F3F3F3;
-  border-radius: 20px;
+  width: 70%; /* 固定値から幅をパーセンテージに変更 */
+  max-width: calc(100% - 230px); /* 最大幅を設定 */
   padding: 10px;
 }
 
@@ -326,9 +338,10 @@ a.wine-name-color{
   font-size: 14px;
   display: flex; 
   position: absolute;
-  top: 170px;
-  left: 840px;
+  bottom: 20px; /* 望む位置に調整 */
+  right: 30px; /* 望む位置に調整 */
 }
+  
 .edit-link {
   color: #757575;
   margin-right: 10px;
