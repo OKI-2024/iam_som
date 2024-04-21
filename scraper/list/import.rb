@@ -8,20 +8,14 @@ CSV.foreach(csv_file_path, headers: true) do |row|
   # grape_variety_idが空の場合はnilを設定
   grape_variety_id = row['grape_variety_id'].present? ? row['grape_variety_id'] : nil
 
-  wine = Wine.new(
-  name: row['name'],
-  producer: row['producer'],
-  type_id: row['type_id'],
-  grape_variety_id: grape_variety_id,
-  region_id: row['region_id']
-)
-
-if wine.valid?
-  wine.save
-  puts "ワイン #{wine.name} を保存しました。"
-else
-  puts "ワイン #{wine.name} を保存できませんでした。エラーメッセージ: #{wine.errors.full_messages}"
-end
+  wine = Wine.create!(
+    name: row['name'],
+    producer: row['producer'],
+    type_id: row['type_id'],
+    grape_variety_id: grape_variety_id,
+    region_id: row['region_id']
+    # 画像はこの時点ではまだ紐付けない
+  )
 
   # 画像URLからの画像ファイルのダウンロードと紐付け
   if row['image'].present?

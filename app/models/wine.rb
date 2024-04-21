@@ -7,7 +7,6 @@ class Wine < ApplicationRecord
   has_one_attached :image
 
   validates :name, presence: true
-  validates :image, presence: true
 
 
   validates :grape_variety_id, numericality: { other_than: 1, allow_nil: true }
