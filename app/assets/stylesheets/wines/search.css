@@ -15,22 +15,26 @@
   width: 100%;
   margin: 0 auto;
   padding: 20px;
-  display: flex; /* フレックスコンテナとして設定 */
-  flex-wrap: wrap; /* 要素が多い場合に折り返し */
-  justify-content: space-around; /* アイテム間の隙間を均等に */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-
 .search-result-index {
-  width: calc(25% - 30px);
+  width: calc(50% - 30px); /* スマホでは2列、PCでは4列表示 */
   border: 1px solid #ccc;
   padding: 10px;
-  margin: 15px; /* 上下左右のマージン */
+  margin: 15px;
   background-color: #f9f9f9;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-  display: flex; /* 内容をフレックスボックスとして扱う */
-  flex-direction: column; /* 要素を縦方向に並べる */
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
+}
 
+@media (min-width: 768px) {
+  .search-result-index {
+    width: calc(25% - 30px); /* PCでの4列表示 */
+  }
 }
 
 .wine-information {
@@ -61,7 +65,20 @@
   text-decoration: none;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  /* スマホサイズの場合の大きさ調整 */
+  font-size: 16px;
+  padding: 8px 16px;
 }
+
+/* 画面幅が小さい場合のフォントサイズ調整 */
+@media (max-width: 600px) {
+  .details-link {
+    font-size: 10px;
+  }
+}
+
+
+
 
 .details-link:hover {
   background-color: #522D27;
