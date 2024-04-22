@@ -50,27 +50,104 @@
 - 機能2: 詳細をここに記述
 
 ## データベース設計
-- テーブル名1:
-  - カラム1: 説明
-  - カラム2: 説明
-- テーブル名2:
-  - カラム1: 説明
-  - カラム2: 説明
+
+### ER図
+[![Image from Gyazo](https://i.gyazo.com/82698119d4b6aaa39e8ca87f9432156b.png)](https://gyazo.com/82698119d4b6aaa39e8ca87f9432156b)
+
+### Users Table
+| Column Name          | Data Type | Additional Info        |
+|----------------------|-----------|------------------------|
+| email                | string    | Required, Unique      |
+| encrypted_password   | string    | Required              |
+| nickname             | string    | Required, Unique      |
+
+#### Associations:
+- User has many Reviews
+
+### Wines Table
+| Column Name        | Data Type | Additional Info          |
+|--------------------|-----------|--------------------------|
+| name               | string    | Required                 |
+| producer           | string    |                          |
+| type_id            | integer   |                          |
+| grape_variety_id   | integer   |                          |
+| region_id          | integer   |                          
+
+#### Associations:
+- Wine has many Reviews
+
+### Reviews Table
+| Column Name         | Data Type | Additional Info          |
+|---------------------|-----------|--------------------------|
+| user_id             | bigint    | Foreign Key (references users) |
+| wine             | references    | Foreign Key (references wines) |
+| wine_date           | date      |                          |
+| content             | text      | Max length: 240 characters |
+| wine_bar            | string    |                          |
+| sweetness           | integer   |                          |
+| bitterness          | integer   |                          |
+| acidity             | integer   |                          |
+| alcohol             | integer   |                          |
+
+#### Associations:
+- Review belongs to User and Wine
+- Review has many FragranceReviews
+- Review has many Fragrances through FragranceReviews
+
+### Fragrances Table
+| Column Name | Data Type | Additional Info |
+|-------------|-----------|-----------------|
+| name        | string    |                 |
+| category    | string    |                 |
+
+#### Associations:
+- Fragrance has many FragranceReviews
+- Fragrance has many Reviews through FragranceReviews
+
+### FragranceReviews Table
+| Column Name | Data Type | Additional Info                           |
+|-------------|-----------|-------------------------------------------|
+| fragrance   | references| Foreign Key (references fragrances)       |
+| review      | references| Foreign Key (references reviews)          |
+
+#### Associations:
+- FragranceReview belongs to Fragrance and Review
+
 
 ## 画面遷移図
-[画面遷移図URL](http://example.com)
+[画面遷移図URL]([![Image from Gyazo](https://i.gyazo.com/0865acb7d0d36d6b878e2bab995b022c.png)](https://gyazo.com/0865acb7d0d36d6b878e2bab995b022c))
 
 ## 開発環境
-- Ruby: 2.7.3
-- Rails: 6.1.3
-- データベース: PostgreSQL
+
+#### フロントエンド
+- HTML, CSS, JavaScript,bootstrap
+- 非同期通信を活用
+
+#### バックエンド
+- Ruby, Ruby on Rails 7.0.8.1
+- 非同期通信を活用
+
+#### データベース
+- MariaDB
+
+#### データベース管理
+
+#### ソース管理
+- GitHub, GitHub Desktop
+
+#### デプロイ/運用
+- AWS S3 EC2
+
+
 
 ## ローカルでの動作方法
-1. リポジトリをクローンします。
-2. `bundle install`を実行してGemをインストールします。
-3. `rails db:migrate`を実行してデータベースをセットアップします。
-4. `rails server`を実行してサーバーを起動します。
-5. ブラウザで `http://localhost:3000` にアクセスします。
+1.～～～
+
+2.～～～
+
+3.～～～
+
+4.～～～
 
 ## 工夫したポイント
 - 工夫したポイントをここに記述します。
