@@ -17,6 +17,11 @@
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px; /* スマートフォン等では文字の大きさを小さくする */
+  }
+}
 /* Wine Information Styles */
 p {
   font-size: 16px;
@@ -26,7 +31,7 @@ p {
 
 /* Form Group Styles */
 .form-control{
-  width: 250px;        /* 全幅を使う */
+  width: 50%;        /* 全幅を使う */
   padding: 8px 12px;  /* パディングを調整 */
   border: 1px solid #ccc; /* 境界線のスタイル */
   border-radius: 4px; /* 角を丸く */
@@ -87,8 +92,6 @@ p {
 
 /* Fragrance Selection Styles */
 .fragrance-category {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 15px;
 }
 
@@ -102,7 +105,7 @@ p {
 
 .fragrance-items-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* PCでは4列に設定 */
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -122,12 +125,23 @@ p {
   cursor: pointer;
   flex-grow: 1;
   justify-content: flex-start;
+  font-size: 14px; /* 文字の大きさを小さくする */
 }
 
 .fragrance-item input[type="checkbox"] {
   margin-right: 10px;
 }
 
+/* Media Query for Smaller Screen Sizes */
+@media (max-width: 768px) {
+  .fragrance-items-container {
+    grid-template-columns: repeat(2, 1fr); /* スマートフォン等では3列に設定 */
+  }
+
+  .fragrance-category h4 {
+    font-size: 12px; /* カテゴリーの見出しの文字の大きさを調整 */
+  }
+}
 /* Button Styles */
 .submit-btn,
 .fragrance-select-btn {
