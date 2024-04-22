@@ -1,0 +1,64 @@
+.sign-in-main {
+  background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 水平方向の中央揃えを追加 */
+  flex-direction: column;
+  width: 100vw;
+  height: auto; /* 高さを画面の高さいっぱいに設定 */
+}
+
+
+.sign-in-main h2{
+  font-weight: bold;
+  margin-top: 50px;
+  font-size: 24px;
+}
+.sign-in-form {
+  width: 50%;
+  height: auto;
+  max-width: 500px; /* フォームの最大幅を設定 */
+  background-color: white;
+  padding: 20px; /* フォームの内側の余白を追加 */
+  border-radius: 10px; /* 角丸を追加 */
+  margin: 30px 0 50px 0;
+}
+
+.form-header {
+  margin-bottom: 20px; /* フォームヘッダーとフォームの間に余白を追加 */
+
+  }
+  .field {
+    padding: 5px; /* 必要に応じてフォーム要素のパディングも追加 */
+    margin-bottom: 10px; /* 必要に応じてフォーム要素のマージンも追加 */
+  }
+  
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="password"],
+  .field textarea {
+    width: 100%; /* フォーム要素の幅を100%に設定 */
+    padding: 5px; /* 必要に応じてフォーム要素のパディングも追加 */
+    border: solid 1px #CCCCCC;
+    outline: none; /* デフォルトのフォーカス時のアウトラインを削除 */
+    border-radius: 5px;
+  }
+
+  .field label {
+
+    
+  }
+  .sign-in-form .actions {
+    text-align: center; /* ボタンを中央揃えにする */
+  }
+  
+  .custom-button {
+    width: 50%; /* 幅を200pxに設定 */
+    height: auto; /* 高さを40pxに設定 */
+    border: none;
+    padding: 10px;
+    background-color: #34495E;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+  }
