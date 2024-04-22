@@ -1,77 +1,63 @@
 .wine-show-main {
-  min-height: 60vh;
-  display: flex;
-  position: relative;
-  width: 100%;
   background-color: #F3F3F3;
 }
 
 .wine-show-main-center {
-  background-color: white;
-  width: 1200px;
-  height: 90%;
-  margin: 10px auto;
+  width: 100%; /* 幅 */
   border-radius: 20px;
   display: flex;
-  position: relative;
+  flex-direction: column; /* モバイルビューでは縦に並べる */
+  justify-content: space-between;
+  align-items: center; /* 中央揃え */
+  padding: 20px 10px; /* 余白をモバイルビューに合わせて調整 */
 }
 
 .wine-info {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 16px; /* 適切なフォントサイズに調整 */
-  width: 400px; /* 適切な幅に調整 */
-}
-
-.wine-info ul {
-  list-style-type: none; /* リストのスタイルをなしに */
-  padding: 0;
-}
-
-.wine-info li {
-  margin-bottom: 10px; /* 項目間の間隔 */
-}
-
-.wine-info strong {
-  font-weight: bold; /* 見出しを太字に */
-  color: #333; /* 見出しの色を暗めにして区別 */
-}
-
-.wine-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  flex-grow: 1;
-  position: relative;
-}
-
-.wine-image {
-  width: 600px;
-  height: 600px;
-  border-radius: 20px;
-  object-fit: contain;
+  font-size: 12px;
+  width: 100%; /* 幅を100%に設定 */
+  margin-bottom: 20px; /* モバイルビューでは余白を追加 */
 }
 
 .detail-page-review-btn {
-  width: 260px;
+  width: 100%; /* 幅を100%に設定 */
+  max-width: 300px; /* 最大幅を設定 */
+  margin-bottom: 20px; /* モバイルビューでは余白を追加 */
   background-color: #34495E;
-  text-align: center;
+  color: #fff;
   border-radius: 20px;
   padding: 15px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-.detail-page-review-text {
-  color: #fff;
-  display: block;
-  font-size: 15px;
   text-decoration: none;
-  font-weight: bold;
+  text-align: center;
 }
 
-.detail-page-review-btn-icon {
-  width: 60%;
+.wine-image-container {
+  width: 100%; /* 幅を100%に設定 */
+  display: flex;
+  justify-content: center; /* 中央揃え */
+}
+
+.wine-image {
+  width: 100%; /* 幅を100%に設定 */
+  max-height: 300px; /* 最大高さ */
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* メディアクエリ */
+@media only screen and (min-width: 768px) {
+  .wine-show-main-center {
+    flex-direction: row; /* タブレットサイズ以上では横並びに戻す */
+    padding: 20px 40px; /* 余白をデスクトップビューに合わせて調整 */
+  }
+  .wine-info {
+    width: calc(50% - 10px); /* 50%の幅に設定 */
+    margin-bottom: 0; /* タブレットサイズ以上では余白を削除 */
+  }
+  .detail-page-review-btn {
+    width: calc(30% - 10px); /* 30%の幅に設定 */
+    margin-bottom: 0; /* タブレットサイズ以上では余白を削除 */
+  }
+  .wine-image {
+    width: 40%; /* 幅を40%に設定 */
+  }
 }

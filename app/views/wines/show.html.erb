@@ -12,17 +12,19 @@
       </ul>
     </div>
 
-    <div class="wine-image-container">
-      <% if @wine.image.attached? %>
-        <%= image_tag @wine.image, class: "wine-image" %>
-      <% else %>
-        <p>No Image</p>
+    <div class="detail-page-review-btn">
+      <%= link_to(new_wine_review_path(wine_id: @wine.id)) do %>
+        <div class="detail-page-review-text">このワインのレビューを投稿する</div>
       <% end %>
-      <%= link_to(new_wine_review_path(wine_id: @wine.id), class: 'detail-page-review-btn') do %>
-    <div class="detail-page-review-text">このワインのレビューを投稿する</div>
-      <% end %>
-
     </div>
+  </div>
+
+  <div class="wine-image-container">
+    <% if @wine.image.attached? %>
+      <%= image_tag @wine.image, class: "wine-image" %>
+    <% else %>
+      <p>No Image</p>
+    <% end %>
   </div>
 </div>
 

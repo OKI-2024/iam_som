@@ -1,114 +1,141 @@
-.user-show-main{
+/* 基本のスタイル */
+.user-show-main {
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #F3F3F3;
   padding: 80px 0;
-  
-
 }
-.user-show-container{
+
+.user-show-container {
   background-color: white;
   width: 80%;
+  max-width: 800px; /* 最大幅を設定 */
   margin: 10px 0;
   border-radius: 20px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
   padding: 50px;
-
 }
-.user-show-upper{
+
+/* 上部セクション */
+.user-show-upper {
   display: flex;
   justify-content: space-between;
-}
-.registration_date{
-  color: #888888;
-}
-.user-edit{
-  color: #888888;
-}
-.haguruma-icon{
-  width: 30px;
-  height: 30px;
-}
-.user-show-middle{
-  display: flex;
-  justify-content: space-between;
+  align-items: center; /* 上揃え */
 }
 
-.user-show-middle-left{
-  display: flex;
-  position: relative;
-
+.registration_date {
+  color: #888888;
 }
-.user-icon{
+
+.user-edit {
+  color: #888888;
+}
+
+/* 中央セクション */
+.user-show-middle {
+  display: flex;
+  flex-direction: column; /* モバイルビューでは縦に並べる */
+  align-items: center; /* 中央揃え */
+  justify-content: space-around;
+}
+
+.user-show-middle-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 中央揃え */
+}
+
+.user-icon {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  margin-bottom: 20px; /* モバイルビューでは余白を追加 */
 }
 
-.user-nickname{
-  position: absolute;
-  top: 50px;
-  left: 180px;
+.user-nickname {
   font-weight: bold;
-  font-size: 40px;
-  width: 300px;
+  font-size: 24px;
+  text-align: center; /* 中央揃え */
+  margin-bottom: 20px; /* モバイルビューでは余白を追加 */
 }
 
-.user-show-middle-right{
-  position: relative;
+.user-show-middle-right {
+  width: 50%;
 }
 
-.user-show-middle-right-container{
+.user-show-middle-right-container {
   background-color: #663333;
   border-radius: 20px;
-  height: auto;
-  width: 80%;
   color: white;
-  padding: 20px;
-  margin-right: 100px;
+  padding: 15px;
+  margin-top: 20px; /* モバイルビューでは余白を追加 */
 }
 
-.middle-right-container-upper{
+.middle-right-container-upper {
   font-weight: bold;
 }
-.middle-right-container-bottom{
+
+.middle-right-container-bottom {
   font-weight: bold;
-  display: flex;
-  justify-content: flex-start;
-  padding-top: 20px;
-}
+  }
 
 .middle-right-container-bottom li {
-  margin-right: 20px; /* 右に20pxの間隔を設定 */
+  margin-bottom: 3px; /* リストアイテム間の間隔を追加 */
 }
 
-
-.user-show-bottom{
+/* 下部セクション */
+.user-show-bottom {
   display: flex;
-  padding-top: 50px;
+  flex-direction: column; /* モバイルビューでは縦に並べる */
+  align-items: center; /* 中央揃え */
+  margin-top: 40px; /* モバイルビューでは余白を追加 */
   justify-content: space-between;
 }
 
-.user-show-bottom-left-container{
-  width: 45%;
-  height: 150px;
+.user-show-bottom-left-container,
+.user-show-bottom-right-container {
+  width: 100%; /* 幅を100%に設定 */
   padding: 20px;
-  border-top:#BEBEBE solid 1px;
-  font-weight: bold;
+  border-top: #BEBEBE solid 1px;
+  text-align: center; /* 中央揃え */
 }
 
-.user-show-bottom-right-container{
-  width: 45%;
-  height: 150px;
-  padding: 20px;
-  border-top:#BEBEBE solid 1px;
-  font-weight: bold;
-}
-
-.user-show-bottom h4{
+.user-show-bottom h4 {
   padding-top: 20px;
   font-size: 15px;
 }
 
+/* メディアクエリ */
+@media only screen and (min-width: 768px) {
+  /* タブレットサイズ以上のスタイル */
+  .user-show-main {
+    padding: 40px 0; /* 余白を調整 */
+  }
 
+  .user-show-container {
+    width: 90%; /* 幅を調整 */
+    padding: 30px; /* 余白を調整 */
+  }
+
+  .user-show-middle {
+    flex-direction: row; /* 横並びにする */
+    align-items: flex-start; /* 上揃え */
+  }
+
+  .user-show-middle-left {
+    margin-right: 40px; /* 右側の余白を追加 */
+  }
+
+  .user-show-bottom {
+    flex-direction: row; /* 横並びにする */
+    align-items: flex-start; /* 上揃え */
+    margin-top: 60px; /* 余白を調整 */
+  }
+
+  .user-show-bottom-left-container,
+  .user-show-bottom-right-container {
+    width: 45%; /* 幅を調整 */
+    margin-top: 0; /* 余白を削除 */
+  }
+}
