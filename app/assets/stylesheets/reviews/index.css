@@ -176,27 +176,28 @@ main {
 }
 
 .checkbox-container h5 {
-  margin-bottom: 10px; /* タイトル下の余白 */
+  margin-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
   border-bottom: #CCC solid 1px;
+  padding-bottom: 5px;
 }
 
 .checkbox-container {
-  margin-top: 20px; /* セクション間の余白 */
+  margin-top: 20px;
 }
 
 .checkbox-group {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline; /* ラベルが基線に沿って整列する */
+  align-items: baseline; 
 }
 
 .checkbox-item {
-  flex: 1 1 20%; /* 各アイテムが行内で均等に配置される */
+  flex: 1 1 20%;
   margin-bottom: 10px;
   display: flex;
-  align-items: center; /* チェックボックスとラベルが垂直方向の中央に来るよう調整 */
+  align-items: center; 
 }
 
 .modal-footer{
@@ -223,7 +224,7 @@ main {
 .background-image {
   width: 100%;
   height: 100%;
-  z-index: 0; /* 背景画像が最背面になるようにする */
+  z-index: 0;
  
   opacity: 0.3;
   position: absolute;
@@ -295,13 +296,13 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center; /* 中央に配置 */
+  justify-content: center;
   padding: 0 20px;
 }
 .review{
   background-color: white;
-  width: 100%; /* 固定値から幅をパーセンテージに変更 */
-  max-width: 900px; /* 最大幅を設定 */
+  width: 100%;
+  max-width: 900px;
   margin: 20px 0;
   border-radius: 10px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
@@ -324,7 +325,7 @@ main {
 .user-name{
   flex-grow: 0;
   flex-shrink: 0;
-  font-size: 12px;
+  font-size: 16px;
 }
 a.user-name-color{
   color: #757575;
@@ -339,7 +340,7 @@ a.user-name-color{
 
 .wine-name{
   max-width: 100%;
-  font-size: clamp(14px, 2.5vw, 18px);
+  font-size: clamp(12px, 2.5vw, 16px);
   white-space: normal;
   overflow-wrap: break-word;
   
@@ -359,8 +360,8 @@ a.wine-name-color{
 
 .review-text{
   margin-left: 30px;
-  width: 70%; /* 固定値から幅をパーセンテージに変更 */
-  max-width: calc(100% - 230px); /* 最大幅を設定 */
+  width: 70%;
+  max-width: calc(100% - 230px);
   padding: 10px;
 }
 
@@ -376,15 +377,15 @@ a.wine-name-color{
 .review-image{
   width: 190px;
   height: 190px;
-  margin-left: 10px;
+
 }
 
 .link-to-show{
   font-size: 14px;
   display: flex; 
   position: absolute;
-  bottom: 20px; /* 望む位置に調整 */
-  right: 30px; /* 望む位置に調整 */
+  bottom: 20px;
+  right: 30px;
 }
   
 .edit-link {

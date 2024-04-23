@@ -1,10 +1,10 @@
 .search-result-upper{
-  display: flex;               /* Flexboxを有効化 */
-  justify-content: center;     /* 横軸で中央揃え */
-  align-items: center;         /* 縦軸で中央揃え */
-  text-align: center;          /* テキストも中央揃え */
-  min-height: 50px;           /* このdivの最小の高さを設定 */
-  margin: auto;                /* 自動的に上下左右のマージンを設定して中央揃え */
+  display: flex;              
+  justify-content: center;     
+  align-items: center;        
+  text-align: center;       
+  min-height: 50px;          
+  margin: auto;               
   width: 100%;
   font-weight: bold;
   font-size: 20px;
@@ -33,25 +33,25 @@
 
 @media (min-width: 768px) {
   .search-result-index {
-    width: calc(25% - 30px); /* PCでの4列表示 */
+    width: calc(25% - 30px); 
   }
 }
 
 .wine-information {
-  height: 140px;  /* 適切な高さに設定 */
-  overflow: hidden;  /* 内容が高さを超えた場合に非表示にする */
-  padding: 5px; /* 内容と境界の間にスペースを設ける */
+  height: 140px;  
+  overflow: hidden;  
+  padding: 5px; 
 }
 
 .wine-information h3 {
   margin-top: 0;
-  margin-bottom: 10px; /* 各項目間の隙間を設定 */
-  font-size: 14px; /* フォントサイズの調整 */
-  color: #333; /* フォントカラー */
+  margin-bottom: 10px; 
+  font-size: 14px; 
+  color: #333; 
 }
 .wine-image-index {
   width: 100%;
-  height: auto; /* 画像の元のアスペクト比を保持 */
+  height: auto; 
  
 }
 
