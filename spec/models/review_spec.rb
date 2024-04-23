@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Review, type: :model do
   before do
-    @review = FactoryBot.create(:review)  # ここで基本的なレビューインスタンスを作成
+    @review = FactoryBot.create(:review) # ここで基本的なレビューインスタンスを作成
   end
 
   describe 'レビュー投稿のテスト' do

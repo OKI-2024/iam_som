@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   attr_accessor :fragrance_ids
+
   has_one_attached :image
   belongs_to :user
   belongs_to :wine
@@ -7,10 +8,8 @@ class Review < ApplicationRecord
   has_many :fragrances, through: :fragrance_reviews
 
   validates :content, length: { maximum: 240 }
-  
 
   def self.wine_attributes
     [:sweetness, :bitterness, :acidity, :alcohol]
   end
-  
 end

@@ -1,4 +1,4 @@
 class FragranceReview < ApplicationRecord
-belongs_to :review
-belongs_to :fragrance
+  belongs_to :review
+  belongs_to :fragrance
 end

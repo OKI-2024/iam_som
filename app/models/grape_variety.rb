@@ -29,5 +29,4 @@ class GrapeVariety < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :wines
-
-  end
+end
