@@ -7,32 +7,97 @@
 
 .review-show {
   background-color: white;
-  width: 900px;
-  height: 600px;
+  width: 50%;
+  height: auto;
   margin: 10px 0;
   border-radius: 20px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
-.edit-destroy{
-  font-size: 14px;
-  display: flex; 
-  position: absolute;
-  top: 170px;
-  left: 800px;
+.review-top {
+  margin-bottom: 20px;
 }
 
-.review-bottom{
-  margin: 30px;
-  height: 250px;
+.user-name,
+.wine-date,
+.wine-name {
+  margin-left: 10px;
+}
+
+.review-content {
+  justify-content: space-between;
+  position: relative; /* 相対位置指定 */
+}
+
+.edit-destroy {
+  font-size: 12px;
+  display: flex;
+  position: absolute;
+  bottom: 0; /* 下部に配置 */
+  right: 0; /* 右端に配置 */
+}
+
+.review-bottom {
+  width: 100%;
+  padding: 10px 30px 0px 30px;
   display: flex;
   justify-content: space-around;
+  padding-top: 10px;
 }
-.review-fragrance{
-  font-size: 20px;
 
+.review-fragrance {
+  width: 50%;
+  font-size: 14px;
 }
-.review-four-elements{
-  font-size: 20px;
 
+.fragrance-item {
+  display: inline-block;
+  padding: 5px;
+  margin-right: 10px; /* 香りの間に余白を設定 */
+  border: 1px solid #9dc8e7; /* ボーダー */
+  border-radius: 5px; /* 角丸 */
+  background-color: #eaf6ff; /* 背景色 */
+  color: #3a87ad; /* 文字色 */
+}
+
+.review-four-elements {
+  width: 50%;
+  font-size: 16px;
+}
+
+.star {
+  color: #FFD700; /* 星の色を黄色に設定 */
+}
+
+/* スマートフォンサイズの場合 */
+@media screen and (max-width: 600px) {
+  .reviews-show {
+    padding: 50px 0;
+  }
+
+  .review-show {
+    width: 90%;
+    height: auto;
+    max-width: 600px;
+  }
+
+  .edit-destroy {
+    top: auto;
+    left: auto;
+    bottom: 10px; /* 下部に配置 */
+    flex-direction: column; /* 縦に配置 */
+    align-items: center; /* 中央に配置 */
+  }
+
+  .review-bottom {
+    margin: 20px 0;
+    height: auto;
+    flex-direction: column; /* 縦に配置 */
+    align-items: center; /* 中央に配置 */
+  }
+
+  .review-fragrance,
+  .review-four-elements {
+    font-size: 16px; /* テキストサイズを小さく */
+  }
 }
