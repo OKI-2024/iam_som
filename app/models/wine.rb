@@ -8,10 +8,7 @@ class Wine < ApplicationRecord
 
   validates :name, presence: true
 
-
   validates :grape_variety_id, numericality: { other_than: 1, allow_nil: true }
   validates :type_id, numericality: { other_than: 1, allow_nil: true }
   validates :region_id, numericality: { other_than: 1, allow_nil: true }
-  
-
 end

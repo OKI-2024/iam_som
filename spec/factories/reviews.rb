@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :review do
-    content { "This is a great wine!" }
+    content { 'This is a great wine!' }
     user
     wine
     wine_date { Faker::Date.backward(days: 30) }

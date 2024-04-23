@@ -12,7 +12,7 @@ CSV.foreach(csv_file_path, headers: true) do |row|
     name: row['name'],
     producer: row['producer'],
     type_id: row['type_id'],
-    grape_variety_id: grape_variety_id,
+    grape_variety_id:,
     region_id: row['region_id']
     # 画像はこの時点ではまだ紐付けない
   )
