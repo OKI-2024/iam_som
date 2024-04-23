@@ -18,7 +18,7 @@ a:hover {
   height: auto;
   background-color: #663333;
   display: flex;
-  font-size: 20px;  
+  font-size: 16px;  
   padding: 10px 20px;
   font-weight: bold;
 }
@@ -44,7 +44,7 @@ a:hover {
   border-radius: 50%; 
 }
 
-.notification{
+.header-image{
   width: 50px;
   height: 50px; 
   border-radius: 50%;

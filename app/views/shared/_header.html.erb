@@ -3,7 +3,7 @@
       <div class="navbar">
 
         <div class="nav-left">
-          <div><%= link_to 'ワインノミタイ', root_path, class: "nav" %></div>
+          <div><%= link_to(image_tag("wine_nomitai.png", alt: "ロゴ", class: "header-image"), root_path) %></div>
           <div class="nav"><a href="#">ワ活</a></div>
           <div class="nav"><a href="#">ニュース</a></div>
         </div>
@@ -11,7 +11,7 @@
         <div class="nav-right">
           <% if user_signed_in? %>
           <div><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "log-out" %></div>
-          <div class="notification"><%= link_to(image_tag("bell.png", alt: "通知", class: "notification"), "#") %></div>
+          <div class="header-image"><%= link_to(image_tag("bell.png", alt: "通知", class: "header-image"), "#") %></div>
           
           <% else %>
           <div><%= link_to '新規登録', new_user_registration_path, class: "sign-in" %></div>
