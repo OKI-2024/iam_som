@@ -18,35 +18,28 @@
             
           </div>
 
-            <div class="review-content">
-  <div class="review-image">
-    <% if @review.image.attached? %>
-      <%= link_to image_tag(@review.image, class: "review-image"), "#" %>
-    <% end %>
-  </div>
-  
-  <div class="review-text">
-    <%= @review.content %>
-    <ul class="edit-destroy">
-      <% if user_signed_in? && @review.user == current_user %>  
-        <li><%= link_to "編集", edit_wine_review_path(wine_id: @review.wine_id, id: @review.id), class: "edit-link" %></li>
-        <li><%= link_to "削除", review_path(wine_id: @review.wine_id, id: @review.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "delete-link" %></li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-  
-              <div class="review-bottom">
-                  
-                  
-                  <div class="review-fragrance">
+            <div class="show-review-content">
+              <div class="review-image">
+                <% if @review.image.attached? %>
+                  <%= link_to image_tag(@review.image, class: "review-image"), "#" %>
+                <% end %>
+              </div>
+              
+              <div class="review-right">
+                <div class="show-review-text"><%= @review.content %></div>
+                <ul class="edit-destroy">
+                  <% if user_signed_in? && @review.user == current_user %>  
+                    <li><%= link_to "編集", edit_wine_review_path(wine_id: @review.wine_id, id: @review.id), class: "edit-link" %></li>
+                    <li><%= link_to "削除", review_path(wine_id: @review.wine_id, id: @review.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "delete-link" %></li>
+                  <% end %>
+                </ul>
+                <div class="review-right-bottom">
+                <div class="review-fragrance">
                     <% @review.fragrances.each do |fragrance| %>
                       <span class="review-fragrance-item">#<%= fragrance.name %></span>
                     <% end %>
-                  </div>
-                    
-                  
-                  <div class="review-four-elements">
+                </div>
+                 <div class="review-four-elements">
               
                     <ul>
                       <% attribute_names = { sweetness: '甘味', bitterness: '苦味', acidity: '酸味', alcohol: 'アルコール' } %>
@@ -71,7 +64,17 @@
                       <% end %>
                     </ul>
                   </div>
+                </div>
+                
 
+
+              </div>
+            </div>
+  
+              <div class="review-bottom">
+                  
+                  
+                 
                 </div>
               </div>
                                 

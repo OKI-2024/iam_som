@@ -10,7 +10,7 @@
 .user-show-container {
   background-color: white;
   width: 80%;
-  max-width: 800px; /* 最大幅を設定 */
+  max-width: 800px;
   margin: 10px 0;
   border-radius: 20px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
@@ -21,7 +21,7 @@
 .user-show-upper {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* 上揃え */
+  align-items: center;
 }
 
 .registration_date {
@@ -39,29 +39,29 @@
 /* 中央セクション */
 .user-show-middle {
   display: flex;
-  flex-direction: column; /* モバイルビューでは縦に並べる */
-  align-items: center; /* 中央揃え */
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
 
 .user-show-middle-left {
   display: flex;
   flex-direction: column;
-  align-items: center; /* 中央揃え */
+  align-items: center;
 }
 
 .user-icon {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin-bottom: 20px; /* モバイルビューでは余白を追加 */
+  margin-bottom: 20px;
 }
 
 .user-nickname {
   font-weight: bold;
   font-size: 24px;
-  text-align: center; /* 中央揃え */
-  margin-bottom: 20px; /* モバイルビューでは余白を追加 */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .user-show-middle-right {
@@ -73,7 +73,7 @@
   border-radius: 20px;
   color: white;
   padding: 15px;
-  margin-top: 20px; /* モバイルビューでは余白を追加 */
+  margin-top: 20px;
 }
 
 .middle-right-container-upper {
@@ -85,24 +85,24 @@
   }
 
 .middle-right-container-bottom li {
-  margin-bottom: 3px; /* リストアイテム間の間隔を追加 */
+  margin-bottom: 3px;
 }
 
 /* 下部セクション */
 .user-show-bottom {
   display: flex;
-  flex-direction: column; /* モバイルビューでは縦に並べる */
-  align-items: center; /* 中央揃え */
-  margin-top: 40px; /* モバイルビューでは余白を追加 */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
   justify-content: space-between;
 }
 
 .user-show-bottom-left-container,
 .user-show-bottom-right-container {
-  width: 100%; /* 幅を100%に設定 */
+  width: 100%;
   padding: 20px;
   border-top: #BEBEBE solid 1px;
-  text-align: center; /* 中央揃え */
+  text-align: center;
 }
 
 .user-show-bottom h4 {
@@ -114,32 +114,32 @@
 @media only screen and (min-width: 768px) {
   /* タブレットサイズ以上のスタイル */
   .user-show-main {
-    padding: 40px 0; /* 余白を調整 */
+    padding: 40px 0;
   }
 
   .user-show-container {
-    width: 90%; /* 幅を調整 */
-    padding: 30px; /* 余白を調整 */
+    width: 90%; 
+    padding: 30px;
   }
 
   .user-show-middle {
-    flex-direction: row; /* 横並びにする */
-    align-items: flex-start; /* 上揃え */
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .user-show-middle-left {
-    margin-right: 40px; /* 右側の余白を追加 */
+    margin-right: 40px;
   }
 
   .user-show-bottom {
-    flex-direction: row; /* 横並びにする */
-    align-items: flex-start; /* 上揃え */
-    margin-top: 60px; /* 余白を調整 */
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 60px; 
   }
 
   .user-show-bottom-left-container,
   .user-show-bottom-right-container {
-    width: 45%; /* 幅を調整 */
-    margin-top: 0; /* 余白を削除 */
+    width: 45%;
+    margin-top: 0;
   }
 }

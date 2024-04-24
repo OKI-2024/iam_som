@@ -1,106 +1,111 @@
-.reviews-show {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 100px 0;
-}
-
-.review-show {
-  background-color: white;
-  width: 50%;
-  height: auto;
-  margin: 10px 0;
-  border-radius: 20px;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
-}
-
-.review-top {
-  margin-bottom: 20px;
-}
-
-.review-content {
-  justify-content: space-between;
-  position: relative;
-}
-
-.review-image {
-  margin-bottom: 10px;
-}
-
-.review-text {
-  font-size: 14px;
-}
-
-.edit-destroy {
-  font-size: 12px;
-  display: flex;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-}
-
-.review-bottom {
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.review-fragrance {
-  width: 50%;
-  font-size: 12px;
-}
-
-.review-fragrance-item {
-  display: inline-block;
-  padding: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  border: 1px solid #9dc8e7;
-  border-radius: 5px;
-  background-color: #eaf6ff;
-  color: #3a87ad;
-}
-
-.review-four-elements {
-  width: 50%;
-  font-size: 14px;
-}
-
-.star {
-  color: #FFD700;
-}
-
-/* スマートフォンサイズの場合 */
-@media screen and (max-width: 600px) {
-  .reviews-show {
-    padding: 50px 0;
+ .reviews-show {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 0;
   }
 
   .review-show {
-    width: 90%;
+    background-color: white;
+    width: 60%;
     height: auto;
-    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  }
+
+  .review-top {
+    margin-bottom: 20px;
+  }
+
+  .show-review-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+  }
+
+  .review-image {
+    margin-bottom: 10px;
+  }
+
+  .review-right {
+    margin: 0 20px;
+    height: auto;
+  }
+
+  .show-review-text {
+    font-size: 14px;
+    width: 100%;
+    height: 50%;
   }
 
   .edit-destroy {
-    top: auto;
-    left: auto;
-    bottom: 10px;
-    right: 10px;
-    flex-direction: column;
-    align-items: flex-end;
+    font-size: 12px;
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
   }
 
-  .review-bottom {
-    margin: 20px 0;
+  .review-right-bottom {
+    display: flex;
+    margin-top: 10px;
     height: auto;
-    flex-direction: column;
-    align-items: center;
   }
 
-  .review-fragrance,
-  .review-four-elements {
-    font-size: 16px;
+  .review-fragrance {
+    width: 50%;
+    font-size: 12px;
   }
-}
+
+  .review-fragrance-item {
+    display: inline-block;
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #9dc8e7;
+    border-radius: 5px;
+    background-color: #eaf6ff;
+    color: #3a87ad;
+  }
+
+  .review-four-elements {
+    width: 50%;
+    font-size: 14px;
+  }
+
+  .star {
+    color: #FFD700;
+  }
+
+  /* スマートフォンサイズの場合 */
+  @media screen and (max-width: 600px) {
+    .reviews-show {
+      padding: 50px 0;
+    }
+  
+    .review-show {
+      width: 90%;
+      height: auto;
+      max-width: 600px;
+    }
+  
+    .edit-destroy {
+      bottom: 10px;
+      right: 10px;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .show-review-text,
+    .review-fragrance,
+    .review-four-elements {
+      font-size: 10px;
+    }
+    .review-fragrance-item{
+    padding: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    }
+
+  }

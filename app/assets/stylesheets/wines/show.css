@@ -3,25 +3,25 @@
 }
 
 .wine-show-main-center {
-  width: 100%; /* 幅 */
+  width: 100%;
   border-radius: 20px;
   display: flex;
-  flex-direction: column; /* モバイルビューでは縦に並べる */
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center; /* 中央揃え */
-  padding: 20px 10px; /* 余白をモバイルビューに合わせて調整 */
+  align-items: center;
+  padding: 20px 10px;
 }
 
 .wine-info {
   font-size: 12px;
-  width: 100%; /* 幅を100%に設定 */
-  margin-bottom: 20px; /* モバイルビューでは余白を追加 */
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .detail-page-review-btn {
-  width: 100%; /* 幅を100%に設定 */
-  max-width: 300px; /* 最大幅を設定 */
-  margin-bottom: 20px; /* モバイルビューでは余白を追加 */
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
   background-color: #34495E;
   color: #fff;
   border-radius: 20px;
@@ -31,14 +31,14 @@
 }
 
 .wine-image-container {
-  width: 100%; /* 幅を100%に設定 */
+  width: 100%;
   display: flex;
-  justify-content: center; /* 中央揃え */
+  justify-content: center;
 }
 
 .wine-image {
-  width: 100%; /* 幅を100%に設定 */
-  max-height: 300px; /* 最大高さ */
+  width: 100%;
+  max-height: 300px;
   border-radius: 10px;
   object-fit: contain;
 }
@@ -46,18 +46,18 @@
 /* メディアクエリ */
 @media only screen and (min-width: 768px) {
   .wine-show-main-center {
-    flex-direction: row; /* タブレットサイズ以上では横並びに戻す */
-    padding: 20px 40px; /* 余白をデスクトップビューに合わせて調整 */
+    flex-direction: row; 
+    padding: 20px 40px;
   }
   .wine-info {
-    width: calc(50% - 10px); /* 50%の幅に設定 */
-    margin-bottom: 0; /* タブレットサイズ以上では余白を削除 */
+    width: calc(50% - 10px);
+    margin-bottom: 0;
   }
   .detail-page-review-btn {
-    width: calc(30% - 10px); /* 30%の幅に設定 */
-    margin-bottom: 0; /* タブレットサイズ以上では余白を削除 */
+    width: calc(30% - 10px);
+    margin-bottom: 0;
   }
   .wine-image {
-    width: 40%; /* 幅を40%に設定 */
+    width: 40%;
   }
 }

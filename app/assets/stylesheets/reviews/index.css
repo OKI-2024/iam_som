@@ -359,7 +359,8 @@ a.wine-name-color{
 }
 
 .review-text{
-  margin-left: 30px;
+  font-size: 14px;
+  margin-left: 10px;
   width: 70%;
   max-width: calc(100% - 230px);
   padding: 10px;

@@ -10,7 +10,6 @@ class User < ApplicationRecord
                        length: { maximum: 10 },
                        uniqueness: true
 
-  # 自己紹介のバリデーション
   validates :introduction, length: { maximum: 240 },
                            allow_blank: true
 end
