@@ -19,7 +19,6 @@
 
   .show-review-content {
     display: flex;
-    justify-content: space-between;
     padding: 10px;
     position: relative;
   }
@@ -30,6 +29,7 @@
 
   .review-right {
     margin: 0 20px;
+    width: 100%;
     height: auto;
   }
 
@@ -70,6 +70,7 @@
   }
 
   .review-four-elements {
+    margin-left: 20px;
     width: 50%;
     font-size: 14px;
   }
