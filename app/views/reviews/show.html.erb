@@ -34,36 +34,42 @@
                   <% end %>
                 </ul>
                 <div class="review-right-bottom">
-                <div class="review-fragrance">
-                    <% @review.fragrances.each do |fragrance| %>
-                      <span class="review-fragrance-item">#<%= fragrance.name %></span>
-                    <% end %>
-                </div>
-                 <div class="review-four-elements">
-              
-                    <ul>
-                      <% attribute_names = { sweetness: '甘味', bitterness: '苦味', acidity: '酸味', alcohol: 'アルコール' } %>
-                      <% Review.wine_attributes.each do |attribute| %>
-                        <li>
-                          <%= attribute_names[attribute] %>
-                          <% rating = @review.send(attribute) %>
-                          <% if rating.present? %> <!-- 評価がある場合 -->
-                            <% (1..5).each do |i| %>
-                              <% if i <= rating %>
-                                <span class="star">★</span>
-                              <% else %>
+                  
+                  <div class="review-fragrance">
+                      <% @review.fragrances.each do |fragrance| %>
+                        <span class="review-fragrance-item">#<%= fragrance.name %></span>
+                      <% end %>
+                  </div>
+                  
+                  <div class="review-four-elements">
+                      <ul>
+                        <% attribute_names = { sweetness: '甘味', bitterness: '苦味', acidity: '酸味', alcohol: 'アルコール' } %>
+                        <% Review.wine_attributes.each do |attribute| %>
+                          <li>
+                            <%= attribute_names[attribute] %>
+                            <% rating = @review.send(attribute) %>
+                            <% if rating.present? %> <!-- 評価がある場合 -->
+                              <% (1..5).each do |i| %>
+                                <% if i <= rating %>
+                                  <span class="star">★</span>
+                                <% else %>
+                                  <span class="star">☆</span>
+                                <% end %>
+                              <% end %>
+                            <% else %> <!-- 評価がない場合 -->
+                              <% (1..5).each do %> <!-- すべての星を☆で表示 -->
                                 <span class="star">☆</span>
                               <% end %>
                             <% end %>
-                          <% else %> <!-- 評価がない場合 -->
-                            <% (1..5).each do %> <!-- すべての星を☆で表示 -->
-                              <span class="star">☆</span>
-                            <% end %>
-                          <% end %>
-                        </li>
-                      <% end %>
-                    </ul>
-                  </div>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                    <div class="wine-bar">
+                      <div><%= image_tag "wine_bar_icon.png", alt: "店舗アイコン", class: "wine-bar-con" %></div>
+                      <%= @review.wine_bar %>
+                    </div>
+
                 </div>
                 
 
